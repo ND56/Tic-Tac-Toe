@@ -10,24 +10,56 @@ $(() => {
 // game board
 const gameBoard = ['', '', '', '', '', '', '', '', '']
 
-// add to board
-const selectSpace = function (paramForGameBoard) {
-  // when user first selects a space, the space changes to X
-  // if no value is "X" or "Y", first value is X
-  // the values alternate from O to X thereafter
+// add to board function
+// I don't have a check for if the space is already assigned because I plan
+// to make it so that assignment changes the properties of a space so a user
+// can no longer click the space.
+// I don't think it's a problem that if all the spaces are filled the modulus
+// be zero (0 % 2 = 0) because after the last spot is selected, my checkForWin
+// function should end the game.
+const declareWinner = function (value) {
+  console.log('Congratulations ' + value + ', you won!')
+}
+
+const checkForWin = function (array) {
+  if (array[0] === array[3] === array[6]) {
+    declareWinner(array[0])
+  } else if (array[0] === array[4] === array[8]) {
+    declareWinner(array[0])
+  } else if (array[0] === array[1] === array[2]) {
+    declareWinner(array[0])
+  } else if (array[1] === array[4] === array[7]) {
+    declareWinner(array[1])
+  } else if (array[2] === array[5] === array[8]) {
+    declareWinner(array[2])
+  } else if (array[3] === array[4] === array[5]) {
+    declareWinner(array[3])
+  } else if (array[6] === array[7] === array[8]) {
+    declareWinner(array[6])
+  } else if (array[6] === array[4] === array[2]) {
+    declareWinner(array[6])
+  } else if (array.every(function (currentValue) {
+    return currentValue !== ''
+  })) {
+    console.log('It\'s a tie! You\'re both just too good!')
+  }
+  // if no condition met, nothing happens because game continues
+}
+
+const selectSpace = function (coordinates, board) {
   let emptySpaces = 0
-  paramForGameBoard.forEach(function (paramForArrayElement) {
-    if (paramForArrayElement = '') {
+  board.forEach(function (arrElement) {
+    if (arrElement === '') {
       emptySpaces += 1
     }
   })
-  if (emptySpaces = //check to see if odd)
-
-
-
-
-
-  // you cannot choose already occupied spots
-
-  // execute checkForWin function
+  if (emptySpaces % 2 === 1) {
+    board[coordinates] = 'X'
+  } else if (emptySpaces % 2 === 0) {
+    board[coordinates] = 'O'
+  }
+  console.log(board) // for testing purposes
+  checkForWin(board)
 }
+
+// draft some test conditions
