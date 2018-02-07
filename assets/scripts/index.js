@@ -22,21 +22,21 @@ const declareWinner = function (value) {
 }
 
 const checkForWin = function (array) {
-  if (array[0] === array[3] === array[6]) {
+  if (array[0] !== '' && array[0] === array[3] && array[0] === array[6]) {
     declareWinner(array[0])
-  } else if (array[0] === array[4] === array[8]) {
+  } else if (array[0] !== '' && array[0] === array[4] && array[0] === array[8]) {
     declareWinner(array[0])
-  } else if (array[0] === array[1] === array[2]) {
+  } else if (array[0] !== '' && array[0] === array[1] && array[0] === array[2]) {
     declareWinner(array[0])
-  } else if (array[1] === array[4] === array[7]) {
+  } else if (array[1] !== '' && array[1] === array[4] && array[1] === array[7]) {
     declareWinner(array[1])
-  } else if (array[2] === array[5] === array[8]) {
+  } else if (array[2] !== '' && array[2] === array[5] && array[2] === array[8]) {
     declareWinner(array[2])
-  } else if (array[3] === array[4] === array[5]) {
+  } else if (array[3] !== '' && array[3] === array[4] && array[3] === array[5]) {
     declareWinner(array[3])
-  } else if (array[6] === array[7] === array[8]) {
+  } else if (array[6] !== '' && array[6] === array[7] && array[6] === array[8]) {
     declareWinner(array[6])
-  } else if (array[6] === array[4] === array[2]) {
+  } else if (array[6] !== '' && array[6] === array[4] && array[6] === array[2]) {
     declareWinner(array[6])
   } else if (array.every(function (currentValue) {
     return currentValue !== ''
@@ -54,6 +54,7 @@ const selectSpace = function (coordinates, board) {
     }
   })
   if (emptySpaces % 2 === 1) {
+    // now assign the selected space the value "x"
     board[coordinates] = 'X'
   } else if (emptySpaces % 2 === 0) {
     board[coordinates] = 'O'
@@ -61,5 +62,3 @@ const selectSpace = function (coordinates, board) {
   console.log(board) // for testing purposes
   checkForWin(board)
 }
-
-// draft some test conditions
