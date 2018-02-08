@@ -1,22 +1,23 @@
 'use strict'
 
-const setAPIOrigin = require('../../lib/set-api-origin')
-const config = require('./config')
+const ui = require('./ui')
 
-$(() => {
-  setAPIOrigin(location, config)
-})
+const determineValue = function (board, cellValue, cellIdValue) {
+  let emptySpaces = 0
+  board.forEach(function (arrElement) {
+    if (arrElement === '') {
+      emptySpaces += 1
+    }
+  })
+  if (emptySpaces % 2 === 1) {
+    board[cellIdValue] = 'X'
+    ui.editGameBoard(cellValue, 'X')
+  } else if (emptySpaces % 2 === 0) {
+    board[cellIdValue] = 'O'
+    ui.editGameBoard(cellValue, 'O')
+  }
+}
 
-// game board
-const gameBoard = ['', '', '', '', '', '', '', '', '']
-
-// add to board function
-// I don't have a check for if the space is already assigned because I plan
-// to make it so that assignment changes the properties of a space so a user
-// can no longer click the space.
-// I don't think it's a problem that if all the spaces are filled the modulus
-// be zero (0 % 2 = 0) because after the last spot is selected, my checkForWin
-// function should end the game.
 const declareWinner = function (value) {
   console.log('Congratulations ' + value + ', you won!')
 }
@@ -46,32 +47,7 @@ const checkForWin = function (array) {
   // if no condition met, nothing happens because game continues
 }
 
-const selectSpace = function (event) {
-  event.preventDefault()
-  const cellValue = event.target.parentElement
-  const cellId = event.target.attributes.id
-  const cellIdValue = $(cellId).val()
-  // console.log(cellIdValue)
-  // $(cellValue).text('X')
-  let emptySpaces = 0
-  gameBoard.forEach(function (arrElement) {
-    if (arrElement === '') {
-      emptySpaces += 1
-    }
-  })
-  if (emptySpaces % 2 === 1) {
-    // now assign the selected space the value "x"
-    gameBoard[cellIdValue] = 'X'
-    $(cellValue).text('X')
-  } else if (emptySpaces % 2 === 0) {
-    gameBoard[cellIdValue] = 'O'
-    $(cellValue).text('O')
-  }
-  console.log(gameBoard) // for testing purposes
-  checkForWin(gameBoard)
-}
-
 module.exports = {
-  gameBoard,
-  selectSpace
+  determineValue,
+  checkForWin
 }

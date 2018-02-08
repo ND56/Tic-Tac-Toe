@@ -1,5 +1,9 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
-@import 'variables';
-@import 'parameters';
-@import 'themes';
+
+$header-height: 100px;
+$paper-white: #fefefe;
+$charcoal: #4e4e4e;
+$black: #1c1b19;
+$tan: #f3c478;
+$beige: #f5f5dc;

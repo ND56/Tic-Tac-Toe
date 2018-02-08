@@ -1,0 +1,16 @@
+$icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
+@import '~bootstrap-sass/assets/stylesheets/bootstrap';
+
+body {
+  background-color: $paper-white;
+  color: $charcoal;
+}
+
+.header {
+  background-color: $tan;
+  font-family: 'Rammetto One', cursive;
+}
+
+.game-cell {
+  background-color: $beige;
+}

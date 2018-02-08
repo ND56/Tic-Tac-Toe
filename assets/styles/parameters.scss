@@ -1,0 +1,19 @@
+$icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
+@import '~bootstrap-sass/assets/stylesheets/bootstrap';
+
+.header {
+  border: 1px solid $black;
+  font-size: 24px;
+  height: $header-height;
+  line-height: $header-height;
+  text-align: center;
+}
+
+.spaceholder {
+  height: 150px;
+}
+
+.game-cell {
+  border: 1px solid $black;
+  height: 125px;
+}
