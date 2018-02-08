@@ -9,9 +9,11 @@ $(() => {
 })
 
 $(() => {
-  // $('.game-board').hide()
+  // $('.log-in-screen').hide()
+  $('.game-board').hide()
   $('.user-profile-page').hide()
   $('.cell-button').on('click', events.selectSpace)
+  $('#register-form').on('submit', events.onSignUp)
 })
 
 // starting off with the

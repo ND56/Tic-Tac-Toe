@@ -6,6 +6,7 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
   font-size: 50px;
   height: $header-height;
   line-height: $header-height;
+  margin-top: 40px;
   text-align: center;
 }
 
@@ -36,9 +37,15 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 }
 
 .profile-buttons {
-  display: block;
-  margin: 15px auto;
-  width: 400px;
+  margin-top: 25px;
+}
+
+.log-in-screen {
+  margin: 75px 0 0;
+}
+
+.log-in-buttons {
+  margin-top: 25px;
 }
 
 .turn-tracker {

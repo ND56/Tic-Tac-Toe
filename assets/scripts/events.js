@@ -1,6 +1,9 @@
 'use strict'
 
 const gameLogic = require('./game-logic')
+const getFormFields = require('../../lib/get-form-fields')
+const api = require('./api')
+const ui = require('./ui')
 
 const gameBoard = ['', '', '', '', '', '', '', '', '']
 
@@ -14,7 +17,18 @@ const selectSpace = function (event) {
   gameLogic.checkForWin(gameBoard)
 }
 
+const onSignUp = function (event) {
+  // will want to place a hide register-model here probably
+  // or will need if; if successful, hide; if fail, error message
+  event.preventDefault()
+  const data = getFormFields(event.target)
+  api.create(data)
+    .then(ui.onSignUpSuccess)
+    .catch(ui.onSignUpFailure)
+}
+
 module.exports = {
   gameBoard,
-  selectSpace
+  selectSpace,
+  onSignUp
 }

@@ -22,7 +22,7 @@ const determineValue = function (board, cellValue, cellIdValue) {
 
 const declareWinner = function (value) {
   console.log('Congratulations ' + value + ', you won!')
-  $('#winner-modal-content').text('Congratulations, player ' + value + ', you won!')
+  $('#winner-modal-content').text('Congratulations, Player ' + value + ', you won!')
   $('#winner-modal').modal('show')
   // I would like to add a button to the modal
   // and make it so the view doesn't change
