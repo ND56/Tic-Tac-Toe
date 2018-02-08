@@ -1,5 +1,7 @@
 'use strict'
 
+const store = require('./store')
+
 const editGameBoard = function (cellValue, value) {
   $(cellValue).text(value)
 }
@@ -18,9 +20,24 @@ const onSignUpFailure = function (apiResponse) {
   $('#register-modal-content').text('Your registration was a failure. The server responded with the following error code: ' + apiResponse.status + '. Your error code was accompanied by the following message: ' + apiResponse.statusText + '. Make sure you\'re using a unique email address and that your password entries match!')
 }
 
+const onSignInSuccess = function (apiResponse) {
+  console.log(apiResponse)
+  store.user = apiResponse.user
+  $('#log-in-modal-content').text('Log-in successful; welcome back, ' + apiResponse.user.email + '!')
+  $('.log-in-screen').hide()
+  $('#user-x-profile').text(apiResponse.user.email + '\'s Profile')
+  $('.user-profile-page').show()
+}
+
+const onSignInFailure = function (apiResponse) {
+  console.log(apiResponse)
+}
+
 module.exports = {
   editGameBoard,
   editTurnTracker,
   onSignUpSuccess,
-  onSignUpFailure
+  onSignUpFailure,
+  onSignInSuccess,
+  onSignInFailure
 }

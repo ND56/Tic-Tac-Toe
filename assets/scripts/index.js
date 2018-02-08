@@ -14,6 +14,7 @@ $(() => {
   $('.user-profile-page').hide()
   $('.cell-button').on('click', events.selectSpace)
   $('#register-form').on('submit', events.onSignUp)
+  $('#log-in-form').on('submit', events.onSignIn)
 })
 
 // starting off with the

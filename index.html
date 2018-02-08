@@ -19,15 +19,45 @@
 
   <!-- Start log-in screen -->
         <div class="log-in-screen">
-            <button class="col-xs-offset-3 col-xs-6 log-in-buttons" id="log-in-user-button">Log In Existing User</button>
+            <button class="col-xs-offset-3 col-xs-6 log-in-buttons" id="log-in-user-button" data-toggle="modal" data-target="#log-in-modal">Log In Existing User</button>
             <button class="col-xs-offset-3 col-xs-6 log-in-buttons" id="register-new-user-button" data-toggle="modal" data-target="#register-modal">Register New User</button>
         </div>
+
+      <!-- start log-in screen log-in modal -->
+        <div class="modal fade" id="log-in-modal" tabindex="-1">
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content" id="log-in-modal-content">
+              <!-- start form for log-in modal-->
+              <form class="form-horizontal" id="log-in-form">
+                <div class="form-group">
+                  <label for="inputEmail1" class="col-sm-2 control-label">Email</label>
+                  <div class="col-sm-10">
+                    <input type="email" class="form-control" id="inputEmail1" name="credentials[email]" placeholder="Email">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="inputPassword1" class="col-sm-2 control-label">Password</label>
+                  <div class="col-sm-10">
+                    <input type="password" class="form-control" id="inputPassword1" name="credentials[password]" placeholder="Password">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="col-sm-offset-2 col-sm-10">
+                    <button type="submit" class="btn btn-default">Log in!</button>
+                  </div>
+                </div>
+            </form>
+            <!-- end form for log-in modal-->
+            </div>
+          </div>
+        </div>
+      <!-- end log-in screen log-in modal -->
 
       <!-- start log-in screen register modal -->
         <div class="modal fade" id="register-modal" tabindex="-1">
           <div class="modal-dialog modal-lg">
             <div class="modal-content" id="register-modal-content">
-              <!-- start bootstrap form for register modal-->
+              <!-- start form for register modal-->
               <form class="form-horizontal" id="register-form">
                 <div class="form-group">
                   <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
@@ -53,7 +83,7 @@
                   </div>
                 </div>
             </form>
-            <!-- end bootstrap form for register modal-->
+            <!-- end form for register modal-->
             </div>
           </div>
         </div>
@@ -63,7 +93,7 @@
 
   <!-- Start User profile page -->
         <div class="user-profile-page">
-          <div class="col-xs-offset-2 col-xs-8 user-x-profile">
+          <div class="col-xs-offset-2 col-xs-8 user-x-profile" id="user-x-profile">
             [User]'s Profile
           </div>
           <div class="profile-button-wrapper">

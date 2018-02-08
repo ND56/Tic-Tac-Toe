@@ -13,6 +13,19 @@ const create = function (formFieldsData) {
   })
 }
 
+const signIn = function (formFieldsData) {
+  return $.ajax({
+    url: config.apiOrigin + '/sign-in',
+    method: 'POST',
+    headers: {
+      contentType: 'application/json'
+    },
+    data: formFieldsData
+  })
+  // I need to store the apiResponse (token is key!)
+}
+
 module.exports = {
-  create
+  create,
+  signIn
 }

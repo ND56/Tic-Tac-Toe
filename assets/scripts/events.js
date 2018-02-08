@@ -27,8 +27,17 @@ const onSignUp = function (event) {
     .catch(ui.onSignUpFailure)
 }
 
+const onSignIn = function (event) {
+  event.preventDefault()
+  const data = getFormFields(this)
+  api.signIn(data)
+    .then(ui.onSignInSuccess)
+    .catch(ui.onSignInFailure)
+}
+
 module.exports = {
   gameBoard,
   selectSpace,
-  onSignUp
+  onSignUp,
+  onSignIn
 }
