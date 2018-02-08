@@ -9,5 +9,12 @@ $(() => {
 })
 
 $(() => {
+  // $('.game-board').hide()
+  $('.user-profile-page').hide()
   $('.cell-button').on('click', events.selectSpace)
 })
+
+// starting off with the
+// game board hidden because
+// first page is going
+// to be the log in page

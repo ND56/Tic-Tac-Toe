@@ -12,14 +12,31 @@ const determineValue = function (board, cellValue, cellIdValue) {
   if (emptySpaces % 2 === 1) {
     board[cellIdValue] = 'X'
     ui.editGameBoard(cellValue, 'X')
+    ui.editTurnTracker('O')
   } else if (emptySpaces % 2 === 0) {
     board[cellIdValue] = 'O'
     ui.editGameBoard(cellValue, 'O')
+    ui.editTurnTracker('X')
   }
 }
 
 const declareWinner = function (value) {
   console.log('Congratulations ' + value + ', you won!')
+  $('#winner-modal-content').text('Congratulations, player ' + value + ', you won!')
+  $('#winner-modal').modal('show')
+  // I would like to add a button to the modal
+  // and make it so the view doesn't change
+  // until the button is clicked.
+  $('.game-board').hide()
+  $('.user-profile-page').show()
+}
+
+const declareTie = function () {
+  console.log('It\'s a tie! You\'re both just too good!')
+  $('#winner-modal-content').text('It\'s a tie! You\'re both just too good!')
+  $('#winner-modal').modal('show')
+  $('.game-board').hide()
+  $('.user-profile-page').show()
 }
 
 const checkForWin = function (array) {
@@ -42,7 +59,7 @@ const checkForWin = function (array) {
   } else if (array.every(function (currentValue) {
     return currentValue !== ''
   })) {
-    console.log('It\'s a tie! You\'re both just too good!')
+    declareTie()
   }
   // if no condition met, nothing happens because game continues
 }

@@ -3,17 +3,45 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 
 .header {
   border: 1px solid $black;
-  font-size: 24px;
+  font-size: 50px;
   height: $header-height;
   line-height: $header-height;
   text-align: center;
 }
 
-.spaceholder {
-  height: 150px;
+.game-board {
+  margin-top: 50px;
 }
 
 .game-cell {
   border: 1px solid $black;
   height: 125px;
+}
+
+.user-profile-page {
+  margin-top: 50px;
+}
+
+.user-x-profile {
+  border: 1px solid $black;
+  font-size: 30px;
+  height: $header-height * .75;
+  line-height: $header-height * .75;
+  margin-bottom: 35px;
+  text-align: center;
+}
+
+.profile-button-wrapper {
+  margin: 35px 0 0;
+}
+
+.profile-buttons {
+  display: block;
+  margin: 15px auto;
+  width: 400px;
+}
+
+.turn-tracker {
+  font-size: 25px;
+  text-align: center;
 }
