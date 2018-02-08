@@ -3,23 +3,53 @@
     <head>
       <title>Example</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
-
-      <!-- Do not add `link` tags-->
       <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
-
-      <!-- Do not add `script` tags-->
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+      <link href="https://fonts.googleapis.com/css?family=Rammetto+One" rel="stylesheet">
     </head>
     <body class="container-fluid">
-      <h1>Example</h1>
+      <div class="wrapper">
 
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-      eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-      minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-      ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-      velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-      est laborum.</p>
+  <!-- Start Title -->
+        <header class="row">
+          <!-- bootstrap's "col-sm-offset-x" class allows you to center
+          a column that doesn't take up all 12 of a row. Set it to
+          half the remaining space. -->
+          <div class="col-xs-offset-1 col-xs-10 header">Tic-Tac-Toe</div>
+        </header>
+  <!-- End title -->
+
+  <!-- Start spaceholder div -->
+        <div class="spaceholder"></div>
+  <!-- End spaceholder div -->
+
+  <!-- Start Game board -->
+        <div class="row game-board">
+          <div class="col-xs-offset-2 col-xs-8 game-board">
+            <div class="row">
+              <div class="col-xs-4 game-cell"><button class="b0" id="0" type="submit"></button></div>
+              <div class="col-xs-4 game-cell"><button class="b0" id="1" type="submit"></button></div>
+              <div class="col-xs-4 game-cell"><button class="b0" id="2" type="submit"></button></div>
+            </div>
+            <div class="row">
+              <div class="col-xs-4 game-cell"><button class="b0" id="3" type="submit"></button></div>
+              <div class="col-xs-4 game-cell"><button class="b0" id="4" type="submit"></button></div>
+              <div class="col-xs-4 game-cell"><button class="b0" id="5" type="submit"></button></div>
+            </div>
+            <div class="row">
+              <div class="col-xs-4 game-cell"><button class="b0" id="6" type="submit"></button></div>
+              <div class="col-xs-4 game-cell"><button class="b0" id="7" type="submit"></button></div>
+              <div class="col-xs-4 game-cell"><button class="b0" id="8" type="submit"></button></div>
+            </div>
+          </div>
+        </div>
+    <!-- End Game Board -->
+
+      </div>
     </body>
+
+
+
+
 </html>
