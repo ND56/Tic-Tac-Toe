@@ -1,6 +1,7 @@
 'use strict'
 
 const config = require('./config')
+const store = require('./store')
 
 const create = function (formFieldsData) {
   return $.ajax({
@@ -22,10 +23,22 @@ const signIn = function (formFieldsData) {
     },
     data: formFieldsData
   })
-  // I need to store the apiResponse (token is key!)
+}
+
+const editPassword = function (formFieldsData) {
+  return $.ajax({
+    url: config.apiOrigin + '/change-password/' + store.user.id,
+    method: 'PATCH',
+    headers: {
+      contentType: 'application/json',
+      Authorization: 'Token token=' + store.user.token
+    },
+    data: formFieldsData
+  })
 }
 
 module.exports = {
   create,
-  signIn
+  signIn,
+  editPassword
 }

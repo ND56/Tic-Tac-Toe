@@ -1,11 +1,12 @@
-curl "http://tic-tac-toe.wdibos.com/sign-in" \
+curl "http://tic-tac-toe.wdibos.com/change-password/${ID}" \
     --include \
-    --request POST \
+    --request PATCH \
     --header "Content-Type: application/json" \
+    --header "Authorization: Token token=${TOKEN}" \
     --data '{
-      "credentials": {
-        "email": "'"${EMAIL}"'",
-        "password": "'"${PASSWORD}"'"
+      "passwords": {
+        "old": "'"${OLD_PASSWORD}"'",
+        "new": "'"${NEW_PASSWORD}"'"
       }
     }'
 

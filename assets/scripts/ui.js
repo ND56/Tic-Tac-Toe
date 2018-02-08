@@ -31,6 +31,8 @@ const onSignInSuccess = function (apiResponse) {
 
 const onSignInFailure = function (apiResponse) {
   console.log(apiResponse)
+  $('#log-in-modal-content').text('Failed to log in. The server responded with the following error code: ' + apiResponse.status + '. Your error code was accompanied by the following message: ' + apiResponse.statusText + '. Make sure you\'ve already registered and have entered your email and password correctly!')
+  // I need to add for failure
 }
 
 module.exports = {

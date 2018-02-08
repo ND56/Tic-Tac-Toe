@@ -35,9 +35,16 @@ const onSignIn = function (event) {
     .catch(ui.onSignInFailure)
 }
 
+const onEditPassword = function (event) {
+  event.preventDefault()
+  const data = getFormFields(event.target)
+  api.editPassword(data)
+}
+
 module.exports = {
   gameBoard,
   selectSpace,
   onSignUp,
-  onSignIn
+  onSignIn,
+  onEditPassword
 }
