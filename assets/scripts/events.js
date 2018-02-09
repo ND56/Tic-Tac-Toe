@@ -14,6 +14,11 @@ const createNewGame = function (event) {
   gameBoard.forEach(function (element, index, arr) {
     arr[index] = ''
   })
+  // reset the ui
+  $('.game-cell').text('')
+  $('#rotating-turn-tracker').hide()
+  $('#first-turn-tracker').show()
+  // send api request for new board
   console.log(gameBoard)
   api.newGame(data)
     .then(ui.onCreateNewGameSuccess)
@@ -21,17 +26,19 @@ const createNewGame = function (event) {
 
 const selectSpace = function (event) {
   event.preventDefault()
-  const cellValue = event.target.parentElement
+  const cellValue = event.target
+  // Was previously event.target.parentElement
+  console.log(event)
   const cellId = event.target.attributes.id
   const cellIdValue = $(cellId).val()
+  // the above 2 are the same as when I had buttons.
+  // I'm surprised they still work.
   gameLogic.determineValue(gameBoard, cellValue, cellIdValue)
   console.log(gameBoard) // for testing purposes
   gameLogic.checkForWin(gameBoard)
 }
 
 const onSignUp = function (event) {
-  // will want to place a hide register-model here probably
-  // or will need if; if successful, hide; if fail, error message
   event.preventDefault()
   const data = getFormFields(event.target)
   api.create(data)

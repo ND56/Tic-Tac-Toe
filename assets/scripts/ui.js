@@ -7,7 +7,9 @@ const editGameBoard = function (cellValue, value) {
 }
 
 const editTurnTracker = function (value) {
-  $('#turn-tracker').text('Your turn, player ' + value + '!')
+  $('#first-turn-tracker').hide()
+  $('#rotating-turn-tracker').text('Your turn, player ' + value + '!')
+  $('#rotating-turn-tracker').show()
 }
 
 const onSignUpSuccess = function (apiResponse) {

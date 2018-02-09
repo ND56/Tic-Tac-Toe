@@ -148,22 +148,23 @@
 
   <!-- Start Game board -->
         <div class="row game-board">
-          <p class="turn-tracker" id="turn-tracker">Your turn, player X!<br>Please select a button.</p>
+          <p class="turn-tracker" id="first-turn-tracker">Your turn, player X!<br>Please select a square.</p>
+          <p class="turn-tracker" id="rotating-turn-tracker"></p>
           <div class="col-xs-offset-2 col-xs-8 game-board">
             <div class="row">
-              <div class="col-xs-4 game-cell"><button class="cell-button" id="0" type="submit"></button></div>
-              <div class="col-xs-4 game-cell"><button class="cell-button" id="1" type="submit"></button></div>
-              <div class="col-xs-4 game-cell"><button class="cell-button" id="2" type="submit"></button></div>
+              <div class="col-xs-4 game-cell" id="0"></div>
+              <div class="col-xs-4 game-cell" id="1"></div>
+              <div class="col-xs-4 game-cell" id="2"></div>
             </div>
             <div class="row">
-              <div class="col-xs-4 game-cell"><button class="cell-button" id="3" type="submit"></button></div>
-              <div class="col-xs-4 game-cell"><button class="cell-button" id="4" type="submit"></button></div>
-              <div class="col-xs-4 game-cell"><button class="cell-button" id="5" type="submit"></button></div>
+              <div class="col-xs-4 game-cell" id="3"></div>
+              <div class="col-xs-4 game-cell" id="4"></div>
+              <div class="col-xs-4 game-cell" id="5"></div>
             </div>
             <div class="row">
-              <div class="col-xs-4 game-cell"><button class="cell-button" id="6" type="submit"></button></div>
-              <div class="col-xs-4 game-cell"><button class="cell-button" id="7" type="submit"></button></div>
-              <div class="col-xs-4 game-cell"><button class="cell-button" id="8" type="submit"></button></div>
+              <div class="col-xs-4 game-cell" id="6"></div>
+              <div class="col-xs-4 game-cell" id="7"></div>
+              <div class="col-xs-4 game-cell" id="8"></div>
             </div>
           </div>
         </div>
