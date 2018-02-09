@@ -63,6 +63,11 @@ const onLogOutSuccess = function () {
   $('.log-in-screen').show()
 }
 
+const onCreateNewGameSuccess = function () {
+  $('.user-profile-page').hide()
+  $('.game-board').show()
+}
+
 module.exports = {
   editGameBoard,
   editTurnTracker,
@@ -72,5 +77,6 @@ module.exports = {
   onSignInFailure,
   onEditPasswordSuccess,
   onEditPasswordFailure,
-  onLogOutSuccess
+  onLogOutSuccess,
+  onCreateNewGameSuccess
 }

@@ -7,6 +7,18 @@ const ui = require('./ui')
 
 const gameBoard = ['', '', '', '', '', '', '', '', '']
 
+const createNewGame = function (event) {
+  event.preventDefault()
+  const data = getFormFields(event.target)
+  // // reset the Board
+  gameBoard.forEach(function (element, index, arr) {
+    arr[index] = ''
+  })
+  console.log(gameBoard)
+  api.newGame(data)
+    .then(ui.onCreateNewGameSuccess)
+}
+
 const selectSpace = function (event) {
   event.preventDefault()
   const cellValue = event.target.parentElement
@@ -55,5 +67,6 @@ module.exports = {
   onSignUp,
   onSignIn,
   onEditPassword,
-  onLogOut
+  onLogOut,
+  createNewGame
 }
