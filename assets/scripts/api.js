@@ -96,6 +96,17 @@ const viewAllCompleteGames = function () {
   })
 }
 
+const onViewGameByID = function (gameID) {
+  return $.ajax({
+    url: config.apiOrigin + '/games/' + gameID,
+    method: 'GET',
+    headers: {
+      contentType: 'application/json',
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 module.exports = {
   create,
   signIn,
@@ -103,5 +114,6 @@ module.exports = {
   logOut,
   newGame,
   updateGameStatus,
-  viewAllCompleteGames
+  viewAllCompleteGames,
+  onViewGameByID
 }

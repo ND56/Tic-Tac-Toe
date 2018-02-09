@@ -25,6 +25,7 @@ $(() => {
   $('#return-to-profile').on('click', events.onReturn)
   $('#view-all-prior').on('click', events.onViewAllPrior)
   $('#return-to-prior-games-page').on('click', events.onReturnToPriorGamesPage)
+  $('#view-by-id-form').on('submit', events.viewGameByID)
 })
 
 // starting off with the

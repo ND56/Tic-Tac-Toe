@@ -155,7 +155,7 @@
 
           <div class="view-button-wrapper" id="view-button-wrapper">
             <button class="col-xs-offset-3 col-xs-6 prior-games-buttons" id="view-all-prior">View All Completed Games</button>
-            <button class="col-xs-offset-3 col-xs-6 prior-games-buttons" id="view-ID-prior">View Completed Games by ID</button>
+            <button class="col-xs-offset-3 col-xs-6 prior-games-buttons" id="view-ID-prior" data-toggle="modal" data-target="#view-by-id-modal">View Completed Games by ID</button>
             <button class="col-xs-offset-3 col-xs-6 prior-games-buttons" id="return-to-profile">Return to Profile Page</button>
           </div>
 
@@ -171,6 +171,31 @@
           </div>
 
         </div>
+
+          <!-- start view by id modal -->
+            <div class="modal fade" id="view-by-id-modal" tabindex="-1">
+              <div class="modal-dialog modal-lg">
+                <div class="modal-content" id="view-by-id-modal-content">
+                  <!-- start form for view by id modal-->
+                  <form class="form-horizontal" id="view-by-id-form">
+                    <div class="form-group">
+                      <label for="game-id-input" class="col-sm-2 control-label">Game ID:</label>
+                      <div class="col-sm-10">
+                        <input type="text" class="form-control" id="game-id-input" placeholder="Game ID">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <div class="col-sm-offset-2 col-sm-10">
+                        <button type="submit" class="btn btn-default">View Game!</button>
+                      </div>
+                    </div>
+                </form>
+                <!-- end form for view by id modal-->
+                </div>
+              </div>
+            </div>
+          <!-- end view by id modal -->
+
     <!-- End View Prior Page -->
 
   <!-- Start Game board -->

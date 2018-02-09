@@ -106,6 +106,12 @@ const onReturnToPriorGamesPage = function (event) {
   $('#view-button-wrapper').show()
 }
 
+const viewGameByID = function (event) {
+  event.preventDefault()
+  const gameID = $('#game-id-input').val()
+  api.onViewGameByID(gameID)
+}
+
 module.exports = {
   gameBoard,
   selectSpace,
@@ -117,5 +123,6 @@ module.exports = {
   onViewPrior,
   onReturn,
   onViewAllPrior,
-  onReturnToPriorGamesPage
+  onReturnToPriorGamesPage,
+  viewGameByID
 }
