@@ -2,6 +2,7 @@
 
 const config = require('./config')
 const store = require('./store')
+// const gameLogic = require('./game-logic')
 
 const create = function (formFieldsData) {
   return $.ajax({
@@ -60,10 +61,47 @@ const newGame = function (formFieldsData) {
   })
 }
 
+const updateGameStatus = function (index, array) {
+  // console.log(gameLogic.gameOver)
+  const apiObject = {
+    'game': {
+      'cell': {
+        'index': index,
+        'value': array[index]
+      },
+      'over': store.game.over
+    }
+  }
+  console.log(apiObject)
+  // console.log(gameLogic.gameOver)
+  return $.ajax({
+    url: config.apiOrigin + '/games/' + store.game.id,
+    method: 'PATCH',
+    headers: {
+      contentType: 'application/json',
+      Authorization: 'Token token=' + store.user.token
+    },
+    data: apiObject
+  })
+}
+
+const viewAllCompleteGames = function () {
+  return $.ajax({
+    url: config.apiOrigin + '/games?over=true',
+    method: 'GET',
+    headers: {
+      contentType: 'application/json',
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 module.exports = {
   create,
   signIn,
   editPassword,
   logOut,
-  newGame
+  newGame,
+  updateGameStatus,
+  viewAllCompleteGames
 }

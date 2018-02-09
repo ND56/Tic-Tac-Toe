@@ -1,6 +1,9 @@
 'use strict'
 
 const ui = require('./ui')
+const store = require('./store')
+
+// let gameOver = false
 
 const determineValue = function (board, cellValue, cellIdValue) {
   let emptySpaces = 0
@@ -21,6 +24,7 @@ const determineValue = function (board, cellValue, cellIdValue) {
 }
 
 const declareWinner = function (value) {
+  store.game.over = true
   console.log('Congratulations ' + value + ', you won!')
   $('#winner-modal-content').text('Congratulations, Player ' + value + ', you won!')
   $('#winner-modal').modal('show')
@@ -29,14 +33,17 @@ const declareWinner = function (value) {
   // until the button is clicked.
   $('.game-board').hide()
   $('.user-profile-page').show()
+  // console.log(gameOver)
 }
 
 const declareTie = function () {
+  store.game.over = true
   console.log('It\'s a tie! You\'re both just too good!')
   $('#winner-modal-content').text('It\'s a tie! You\'re both just too good!')
   $('#winner-modal').modal('show')
   $('.game-board').hide()
   $('.user-profile-page').show()
+  // console.log(gameOver)
 }
 
 const checkForWin = function (array) {

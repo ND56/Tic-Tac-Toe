@@ -65,9 +65,26 @@ const onLogOutSuccess = function () {
   $('.log-in-screen').show()
 }
 
-const onCreateNewGameSuccess = function () {
+const onCreateNewGameSuccess = function (apiResponse) {
   $('.user-profile-page').hide()
   $('.game-board').show()
+  store.game = apiResponse.game
+  store.game.over = false
+}
+
+const onViewAllSuccess = function (apiResponse) {
+  console.log(apiResponse)
+  apiResponse.games.forEach(function (game) {
+    $('#prior-games').append('Game ID: ', game.id)
+    $('#prior-games').append('***')
+    $('#prior-games').append('Game Cells: ', game.cells)
+    $('#prior-games').append('***')
+    $('#prior-games').append('Winner is: PLACEHOLDER')
+    $('#prior-games').append('******')
+  })
+  // data.books.forEach(function (book) {
+  //     $('#content').append(book.title)
+  //   })
 }
 
 module.exports = {
@@ -80,5 +97,6 @@ module.exports = {
   onEditPasswordSuccess,
   onEditPasswordFailure,
   onLogOutSuccess,
-  onCreateNewGameSuccess
+  onCreateNewGameSuccess,
+  onViewAllSuccess
 }

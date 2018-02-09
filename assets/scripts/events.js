@@ -4,6 +4,7 @@ const gameLogic = require('./game-logic')
 const getFormFields = require('../../lib/get-form-fields')
 const api = require('./api')
 const ui = require('./ui')
+const store = require('./store')
 
 const gameBoard = ['', '', '', '', '', '', '', '', '']
 
@@ -36,6 +37,7 @@ const selectSpace = function (event) {
   gameLogic.determineValue(gameBoard, cellValue, cellIdValue)
   console.log(gameBoard) // for testing purposes
   gameLogic.checkForWin(gameBoard)
+  api.updateGameStatus(cellIdValue, gameBoard)
 }
 
 const onSignUp = function (event) {
@@ -68,6 +70,42 @@ const onLogOut = function (event) {
     .then(ui.onLogOutSuccess)
 }
 
+const onViewPrior = function (event) {
+  event.preventDefault()
+  $('.user-profile-page').hide()
+  // need to comment out below unless logged in
+  $('#user-x-prior-games').text(store.user.email + '\'s Prior Games')
+  $('.view-prior-page').show()
+}
+
+const onReturn = function (event) {
+  event.preventDefault()
+  $('.view-prior-page').hide()
+  $('.user-profile-page').show()
+}
+
+const onViewAllPrior = function (event) {
+  event.preventDefault()
+  console.log('button works!')
+  $('#view-button-wrapper').hide()
+  // need to comment out below unless logged in
+  $('#user-x-prior-games').text(store.user.email + '\'s Completed Games')
+  // api request
+  // need to comment out below unless logged in
+  api.viewAllCompleteGames()
+    .then(ui.onViewAllSuccess)
+  $('#prior-games-wrapper').show()
+}
+
+const onReturnToPriorGamesPage = function (event) {
+  event.preventDefault()
+  $('#prior-games-wrapper').hide()
+  $('#prior-games').text('')
+  // need to comment out below unless logged in
+  $('#user-x-prior-games').text(store.user.email + '\'s Prior Games')
+  $('#view-button-wrapper').show()
+}
+
 module.exports = {
   gameBoard,
   selectSpace,
@@ -75,5 +113,9 @@ module.exports = {
   onSignIn,
   onEditPassword,
   onLogOut,
-  createNewGame
+  createNewGame,
+  onViewPrior,
+  onReturn,
+  onViewAllPrior,
+  onReturnToPriorGamesPage
 }

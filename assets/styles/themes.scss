@@ -15,6 +15,7 @@ body {
   font-family: 'Rammetto One', cursive;
 }
 
+.user-x-prior-games,
 .user-x-profile {
   background-color: $charcoal;
   color: $tan;
@@ -24,3 +25,18 @@ body {
 .game-cell {
   background-color: $beige;
 }
+
+.log-in-modal {
+  background-color: $charcoal;
+  color: $tan;
+}
+
+.form-control {
+  background-color: $tan;
+  color: $charcoal;
+}
+
+// #inputEmail1::placeholder {
+//   color: $tan;
+//   opacity: 1;
+// }

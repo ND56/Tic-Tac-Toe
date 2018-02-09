@@ -26,7 +26,7 @@
       <!-- start log-in screen log-in modal -->
         <div class="modal fade" id="log-in-modal" tabindex="-1">
           <div class="modal-dialog modal-lg">
-            <div class="modal-content" id="log-in-modal-content">
+            <div class="modal-content log-in-modal" id="log-in-modal-content">
               <!-- start form for log-in modal-->
               <form class="form-horizontal" id="log-in-form">
                 <div class="form-group">
@@ -145,6 +145,33 @@
     </div>
   </div>
   <!-- end universal response modal for buttons that need to be reused in the same view -->
+
+  <!-- Start View Prior Page -->
+        <div class="view-prior-page">
+
+          <div class="col-xs-offset-2 col-xs-8 user-x-prior-games" id="user-x-prior-games">
+            [User]'s Prior Games
+          </div>
+
+          <div class="view-button-wrapper" id="view-button-wrapper">
+            <button class="col-xs-offset-3 col-xs-6 prior-games-buttons" id="view-all-prior">View All Completed Games</button>
+            <button class="col-xs-offset-3 col-xs-6 prior-games-buttons" id="view-ID-prior">View Completed Games by ID</button>
+            <button class="col-xs-offset-3 col-xs-6 prior-games-buttons" id="return-to-profile">Return to Profile Page</button>
+          </div>
+
+          <div class="completed-games-wrapper" id="prior-games-wrapper">
+            <div class="prior-games-container col-xs-offset-2 col-xs-8" id="prior-games">
+              <!-- <ul>
+                <li>Game ID:</li>
+                <li>Cells:</li>
+                <li>Winner:</li>
+              </ul> -->
+            </div>
+            <button class="col-xs-offset-3 col-xs-6 prior-games-buttons" id="return-to-prior-games-page">Return to Prior Games Page</button>
+          </div>
+
+        </div>
+    <!-- End View Prior Page -->
 
   <!-- Start Game board -->
         <div class="row game-board">

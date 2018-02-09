@@ -19,10 +19,12 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
   height: 125px;
 }
 
+.view-prior-page,
 .user-profile-page {
   margin-top: 50px;
 }
 
+.user-x-prior-games,
 .user-x-profile {
   border: 1px solid $black;
   font-size: 30px;
@@ -32,10 +34,12 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
   text-align: center;
 }
 
+.view-button-wrapper,
 .profile-button-wrapper {
   margin: 35px 0 0;
 }
 
+.prior-games-buttons,
 .profile-buttons {
   margin-top: 25px;
 }
@@ -51,4 +55,16 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 .turn-tracker {
   font-size: 25px;
   text-align: center;
+}
+
+.log-in-modal {
+  padding: 25px 25px 10px 0;
+}
+
+.prior-games-container {
+  border: 1px solid $black;
+  height: 85px;
+  margin-top: 25px;
+  padding-top: 12px;
+  text-align: left;
 }
