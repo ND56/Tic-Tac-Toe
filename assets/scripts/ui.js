@@ -12,7 +12,9 @@ const editTurnTracker = function (value) {
 
 const onSignUpSuccess = function (apiResponse) {
   console.log(apiResponse)
-  $('#register-modal-content').text('Your registration was a success, ' + apiResponse.user.email + '; have fun honing your Tic-Tac-Toe skills!')
+  $('#register-modal').modal('hide')
+  $('#universal-response-modal-content').text('Your registration was a success, ' + apiResponse.user.email + '; have fun honing your Tic-Tac-Toe skills!')
+  $('#universal-response-modal').modal('show')
 }
 
 const onSignUpFailure = function (apiResponse) {
