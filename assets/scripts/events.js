@@ -39,6 +39,14 @@ const onEditPassword = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
   api.editPassword(data)
+    .then(ui.onEditPasswordSuccess)
+    .catch(ui.onEditPasswordFailure)
+}
+
+const onLogOut = function (event) {
+  event.preventDefault()
+  api.logOut()
+    .then(ui.onLogOutSuccess)
 }
 
 module.exports = {
@@ -46,5 +54,6 @@ module.exports = {
   selectSpace,
   onSignUp,
   onSignIn,
-  onEditPassword
+  onEditPassword,
+  onLogOut
 }

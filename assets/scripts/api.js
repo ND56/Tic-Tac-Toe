@@ -37,8 +37,20 @@ const editPassword = function (formFieldsData) {
   })
 }
 
+const logOut = function () {
+  return $.ajax({
+    url: config.apiOrigin + '/sign-out/' + store.user.id,
+    method: 'DELETE',
+    headers: {
+      contentType: 'application/json',
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 module.exports = {
   create,
   signIn,
-  editPassword
+  editPassword,
+  logOut
 }
