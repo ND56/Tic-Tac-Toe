@@ -18,6 +18,7 @@ const createNewGame = function (event) {
   // reset the ui
   $('.game-cell').text('')
   $('#rotating-turn-tracker').hide()
+  $('#first-turn-tracker #player-x-span').text(store.user.email)
   $('#first-turn-tracker').show()
   // send api request for new board
   console.log(gameBoard)

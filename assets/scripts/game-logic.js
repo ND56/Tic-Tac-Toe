@@ -15,18 +15,22 @@ const determineValue = function (board, cellValue, cellIdValue) {
   if (emptySpaces % 2 === 1) {
     board[cellIdValue] = 'X'
     ui.editGameBoard(cellValue, 'X')
-    ui.editTurnTracker('O')
+    ui.editTurnTracker('player O')
   } else if (emptySpaces % 2 === 0) {
     board[cellIdValue] = 'O'
     ui.editGameBoard(cellValue, 'O')
-    ui.editTurnTracker('X')
+    ui.editTurnTracker(store.user.email)
   }
 }
 
 const declareWinner = function (value) {
   store.game.over = true
   console.log('Congratulations ' + value + ', you won!')
-  $('#winner-modal-content').text('Congratulations, Player ' + value + ', you won!')
+  if (value === 'X') {
+    $('#winner-modal-content').text('Congratulations, ' + store.user.email + ', you won!')
+  } else {
+    $('#winner-modal-content').text('Congratulations, Player O, you won!')
+  }
   $('#winner-modal').modal('show')
   // I would like to add a button to the modal
   // and make it so the view doesn't change

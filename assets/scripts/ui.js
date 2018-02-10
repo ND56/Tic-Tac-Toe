@@ -8,7 +8,7 @@ const editGameBoard = function (cellValue, value) {
 
 const editTurnTracker = function (value) {
   $('#first-turn-tracker').hide()
-  $('#rotating-turn-tracker').text('Your turn, player ' + value + '!')
+  $('#rotating-turn-tracker').text('Your turn, ' + value + '!')
   $('#rotating-turn-tracker').show()
 }
 
@@ -78,14 +78,45 @@ const onCreateNewGameSuccess = function (apiResponse) {
   store.game.over = false
 }
 
+const checkScore = function (array) {
+  if (array[0] !== '' && array[0] === array[3] && array[0] === array[6]) {
+    return array[0]
+  } else if (array[0] !== '' && array[0] === array[4] && array[0] === array[8]) {
+    return array[0]
+  } else if (array[0] !== '' && array[0] === array[1] && array[0] === array[2]) {
+    return array[0]
+  } else if (array[1] !== '' && array[1] === array[4] && array[1] === array[7]) {
+    return array[1]
+  } else if (array[2] !== '' && array[2] === array[5] && array[2] === array[8]) {
+    return array[2]
+  } else if (array[3] !== '' && array[3] === array[4] && array[3] === array[5]) {
+    return array[3]
+  } else if (array[6] !== '' && array[6] === array[7] && array[6] === array[8]) {
+    return array[6]
+  } else if (array[6] !== '' && array[6] === array[4] && array[6] === array[2]) {
+    return array[6]
+  } else {
+    return 'Tie Game'
+  }
+}
+
 const onViewAllSuccess = function (apiResponse) {
   $('#view-button-wrapper').hide()
   // need to comment out below unless logged in
   $('#user-x-prior-games').text(store.user.email + '\'s Completed Games')
   console.log(apiResponse)
   $('#prior-games-wrapper').show()
-  // trying to close and append
+  // trying to clone and append
+  let gameWinner
   for (let i = 0; i < apiResponse.games.length; i++) {
+    gameWinner = checkScore(apiResponse.games[i].cells)
+    if (gameWinner === 'X' || gameWinner === 'x') {
+      gameWinner = store.user.email
+    } else if (gameWinner === 'o' || gameWinner === 'O') {
+      gameWinner = 'Challenger'
+    } else {
+      gameWinner = 'Tie Game'
+    }
     const newTableId = 'prior-games-table' + i
     const newIDSpanID = 'game-id-span' + i
     const newCellsSpanID = 'cells-span' + i
@@ -98,11 +129,22 @@ const onViewAllSuccess = function (apiResponse) {
     $('#' + newTableId + ' #winner-span').attr('id', newWinnerSpanID)
     $('#' + newIDSpanID).text(apiResponse.games[i].id)
     $('#' + newCellsSpanID).text(apiResponse.games[i].cells)
-    $('#' + newWinnerSpanID).text('PLACEHOLDER' + i)
+    $('#' + newWinnerSpanID).text(gameWinner)
   }
 }
 
 const onViewByIDSuccess = function (apiResponse) {
+  // trying new
+  let gameWinner
+  gameWinner = checkScore(apiResponse.game.cells)
+  if (gameWinner === 'X' || gameWinner === 'x') {
+    gameWinner = store.user.email
+  } else if (gameWinner === 'o' || gameWinner === 'O') {
+    gameWinner = 'Challenger'
+  } else {
+    gameWinner = 'Tie Game'
+  }
+  // trying new
   $('#view-by-id-modal').modal('hide')
   $('#view-button-wrapper').hide()
   // need to comment out below unless logged in
@@ -121,7 +163,7 @@ const onViewByIDSuccess = function (apiResponse) {
   $('#' + newTableId + ' #winner-span').attr('id', newWinnerSpanID)
   $('#' + newIDSpanID).text(apiResponse.game.id)
   $('#' + newCellsSpanID).text(apiResponse.game.cells)
-  $('#' + newWinnerSpanID).text('PLACEHOLDER1')
+  $('#' + newWinnerSpanID).text(gameWinner)
 }
 
 const onViewByIDFailure = function (apiResponse) {
