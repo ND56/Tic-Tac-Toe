@@ -73,7 +73,11 @@ const onCreateNewGameSuccess = function (apiResponse) {
 }
 
 const onViewAllSuccess = function (apiResponse) {
+  $('#view-button-wrapper').hide()
+  // need to comment out below unless logged in
+  $('#user-x-prior-games').text(store.user.email + '\'s Completed Games')
   console.log(apiResponse)
+  $('#prior-games-wrapper').show()
   apiResponse.games.forEach(function (game) {
     $('#prior-games').append('Game ID: ', game.id)
     $('#prior-games').append('***')
@@ -82,9 +86,27 @@ const onViewAllSuccess = function (apiResponse) {
     $('#prior-games').append('Winner is: PLACEHOLDER')
     $('#prior-games').append('******')
   })
-  // data.books.forEach(function (book) {
-  //     $('#content').append(book.title)
-  //   })
+}
+
+const onViewByIDSuccess = function (apiResponse) {
+  $('#view-by-id-modal').modal('hide')
+  $('#view-button-wrapper').hide()
+  // need to comment out below unless logged in
+  $('#user-x-prior-games').text(store.user.email + '\'s Selected Game')
+  console.log(apiResponse)
+  $('#prior-games-wrapper').show()
+  $('#prior-games').append('Game ID: ', apiResponse.game.id)
+  $('#prior-games').append('***')
+  $('#prior-games').append('Game Cells: ', apiResponse.game.cells)
+  $('#prior-games').append('***')
+  $('#prior-games').append('Winner is: PLACEHOLDER')
+}
+
+const onViewByIDFailure = function (apiResponse) {
+  console.log(apiResponse)
+  $('#view-by-id-modal').modal('hide')
+  $('#universal-response-modal-content').text('Failed to locate a game by that ID. The server responded with the following error code: ' + apiResponse.status + '. Your error code was accompanied by the following message: ' + apiResponse.statusText + '. Make sure you entered a correct ID!')
+  $('#universal-response-modal').modal('show')
 }
 
 module.exports = {
@@ -98,5 +120,7 @@ module.exports = {
   onEditPasswordFailure,
   onLogOutSuccess,
   onCreateNewGameSuccess,
-  onViewAllSuccess
+  onViewAllSuccess,
+  onViewByIDSuccess,
+  onViewByIDFailure
 }

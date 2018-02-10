@@ -87,14 +87,8 @@ const onReturn = function (event) {
 const onViewAllPrior = function (event) {
   event.preventDefault()
   console.log('button works!')
-  $('#view-button-wrapper').hide()
-  // need to comment out below unless logged in
-  $('#user-x-prior-games').text(store.user.email + '\'s Completed Games')
-  // api request
-  // need to comment out below unless logged in
   api.viewAllCompleteGames()
     .then(ui.onViewAllSuccess)
-  $('#prior-games-wrapper').show()
 }
 
 const onReturnToPriorGamesPage = function (event) {
@@ -110,6 +104,8 @@ const viewGameByID = function (event) {
   event.preventDefault()
   const gameID = $('#game-id-input').val()
   api.onViewGameByID(gameID)
+    .then(ui.onViewByIDSuccess)
+    .catch(ui.onViewByIDFailure)
 }
 
 module.exports = {
