@@ -12,6 +12,12 @@ const editTurnTracker = function (value) {
   $('#rotating-turn-tracker').show()
 }
 
+const onInvalidSpace = function () {
+  console.log('Seriously, pick a diff space.')
+  $('#universal-response-modal-content').text('You selected an invalid space. Please choose an empty square!')
+  $('#universal-response-modal').modal('show')
+}
+
 const onSignUpSuccess = function (apiResponse) {
   console.log(apiResponse)
   $('#register-modal').modal('hide')
@@ -78,14 +84,22 @@ const onViewAllSuccess = function (apiResponse) {
   $('#user-x-prior-games').text(store.user.email + '\'s Completed Games')
   console.log(apiResponse)
   $('#prior-games-wrapper').show()
-  apiResponse.games.forEach(function (game) {
-    $('#prior-games').append('Game ID: ', game.id)
-    $('#prior-games').append('***')
-    $('#prior-games').append('Game Cells: ', game.cells)
-    $('#prior-games').append('***')
-    $('#prior-games').append('Winner is: PLACEHOLDER')
-    $('#prior-games').append('******')
-  })
+  // trying to close and append
+  for (let i = 0; i < apiResponse.games.length; i++) {
+    const newTableId = 'prior-games-table' + i
+    const newIDSpanID = 'game-id-span' + i
+    const newCellsSpanID = 'cells-span' + i
+    const newWinnerSpanID = 'winner-span' + i
+    const $clone = $('#prior-games-table').clone().show()
+    $clone.attr('id', newTableId)
+    $clone.appendTo('.prior-games-table-expander')
+    $('#' + newTableId + ' #game-id-span').attr('id', newIDSpanID)
+    $('#' + newTableId + ' #cells-span').attr('id', newCellsSpanID)
+    $('#' + newTableId + ' #winner-span').attr('id', newWinnerSpanID)
+    $('#' + newIDSpanID).text(apiResponse.games[i].id)
+    $('#' + newCellsSpanID).text(apiResponse.games[i].cells)
+    $('#' + newWinnerSpanID).text('PLACEHOLDER' + i)
+  }
 }
 
 const onViewByIDSuccess = function (apiResponse) {
@@ -95,11 +109,19 @@ const onViewByIDSuccess = function (apiResponse) {
   $('#user-x-prior-games').text(store.user.email + '\'s Selected Game')
   console.log(apiResponse)
   $('#prior-games-wrapper').show()
-  $('#prior-games').append('Game ID: ', apiResponse.game.id)
-  $('#prior-games').append('***')
-  $('#prior-games').append('Game Cells: ', apiResponse.game.cells)
-  $('#prior-games').append('***')
-  $('#prior-games').append('Winner is: PLACEHOLDER')
+  const newTableId = 'prior-games-table1'
+  const newIDSpanID = 'game-id-span1'
+  const newCellsSpanID = 'cells-span1'
+  const newWinnerSpanID = 'winner-span1'
+  const $clone = $('#prior-games-table').clone().show()
+  $clone.attr('id', newTableId)
+  $clone.appendTo('.prior-games-table-expander')
+  $('#' + newTableId + ' #game-id-span').attr('id', newIDSpanID)
+  $('#' + newTableId + ' #cells-span').attr('id', newCellsSpanID)
+  $('#' + newTableId + ' #winner-span').attr('id', newWinnerSpanID)
+  $('#' + newIDSpanID).text(apiResponse.game.id)
+  $('#' + newCellsSpanID).text(apiResponse.game.cells)
+  $('#' + newWinnerSpanID).text('PLACEHOLDER1')
 }
 
 const onViewByIDFailure = function (apiResponse) {
@@ -122,5 +144,6 @@ module.exports = {
   onCreateNewGameSuccess,
   onViewAllSuccess,
   onViewByIDSuccess,
-  onViewByIDFailure
+  onViewByIDFailure,
+  onInvalidSpace
 }

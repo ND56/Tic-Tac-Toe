@@ -57,14 +57,25 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
   text-align: center;
 }
 
+.prior-games-container {
+  border: 1px solid $black;
+  // height: 85px;
+  margin-top: 25px;
+  padding: 15px;
+  text-align: left;
+}
+
+.prior-games-table {
+  margin-top: 25px;
+}
+
 .log-in-modal {
   padding: 25px 25px 10px 0;
 }
 
-.prior-games-container {
-  border: 1px solid $black;
-  height: 85px;
-  margin-top: 25px;
-  padding-top: 12px;
-  text-align: left;
+.universal-response-modal,
+.universal-response-modal-content {
+  font-size: 20px;
+  padding: 40px;
+  // text-align: center;
 }

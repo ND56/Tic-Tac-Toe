@@ -137,9 +137,9 @@
   <!-- End User profile page -->
 
   <!-- start universal response modal for buttons that need to be reused in the same view -->
-  <div class="modal fade" id="universal-response-modal" tabindex="-1">
+  <div class="modal fade universal-response-modal" id="universal-response-modal" tabindex="-1">
     <div class="modal-dialog modal-lg">
-      <div class="modal-content" id="universal-response-modal-content">
+      <div class="modal-content universal-response-modal-content" id="universal-response-modal-content">
         ...
       </div>
     </div>
@@ -160,13 +160,19 @@
           </div>
 
           <div class="completed-games-wrapper" id="prior-games-wrapper">
-            <div class="prior-games-container col-xs-offset-2 col-xs-8" id="prior-games">
-              <!-- <ul>
-                <li>Game ID:</li>
-                <li>Cells:</li>
-                <li>Winner:</li>
-              </ul> -->
+
+            <div id="prior-games-table-wrapper">
+              <div class="prior-games-table col-xs-offset-2 col-xs-8" id="prior-games-table">
+                <ul>
+                  <li>Game ID: <span class="game-id-span" id="game-id-span"></span></li>
+                  <li>Cells: <span class="cells-span" id="cells-span"></span></li>
+                  <li>Winner: <span class="winner-span" id="winner-span"></span></li>
+                </ul>
+              </div>
+              <div class="prior-games-table-expander">
+              </div>
             </div>
+
             <button class="col-xs-offset-3 col-xs-6 prior-games-buttons" id="return-to-prior-games-page">Return to Prior Games Page</button>
           </div>
 

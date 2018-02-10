@@ -34,10 +34,14 @@ const selectSpace = function (event) {
   const cellIdValue = $(cellId).val()
   // the above 2 are the same as when I had buttons.
   // I'm surprised they still work.
-  gameLogic.determineValue(gameBoard, cellValue, cellIdValue)
-  console.log(gameBoard) // for testing purposes
-  gameLogic.checkForWin(gameBoard)
-  api.updateGameStatus(cellIdValue, gameBoard)
+  if ($(cellValue).text() !== '') {
+    ui.onInvalidSpace()
+  } else {
+    gameLogic.determineValue(gameBoard, cellValue, cellIdValue)
+    console.log(gameBoard) // for testing purposes
+    gameLogic.checkForWin(gameBoard)
+    api.updateGameStatus(cellIdValue, gameBoard)
+  }
 }
 
 const onSignUp = function (event) {
@@ -94,7 +98,8 @@ const onViewAllPrior = function (event) {
 const onReturnToPriorGamesPage = function (event) {
   event.preventDefault()
   $('#prior-games-wrapper').hide()
-  $('#prior-games').text('')
+  // need to reset the prior games table
+  $('.prior-games-table-expander').empty()
   // need to comment out below unless logged in
   $('#user-x-prior-games').text(store.user.email + '\'s Prior Games')
   $('#view-button-wrapper').show()
