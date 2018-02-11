@@ -2,13 +2,19 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 
 body {
-  background-color: $paper-white;
+  background-image: url('http://www.publicdomainpictures.net/pictures/240000/velka/background-triangles-abstract.jpg');
   color: $charcoal;
 }
 
 .header {
   background-color: $tan;
-  font-family: 'Rammetto One', cursive;
+  // font-family: 'Rammetto One', cursive;
+  font-family: 'Raleway', sans-serif;
+}
+
+.log-in-buttons {
+  background-color: #ff99c2;
+  font-family: 'Raleway', sans-serif;
 }
 
 .turn-tracker {

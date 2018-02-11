@@ -2,11 +2,20 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 
 .header {
-  border: 1px solid $black;
+  // border: 2px solid $black;
+  // border: 20px groove $tan;
+  // testing new border
+  border-top-style: double;
+  border-bottom-style: double;
+  border-top-color: #7cbfcf;
+  border-bottom-color: #7cbfcf;
+  border-top-width: 15px;
+  border-bottom-width: 15px;
+  // testing new border
   font-size: 50px;
-  height: $header-height;
-  line-height: $header-height;
   margin-top: 40px;
+  padding-bottom: 10px;
+  padding-top: 15px;
   text-align: center;
 }
 
@@ -49,7 +58,10 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 }
 
 .log-in-buttons {
+  font-size: 20px;
   margin-top: 25px;
+  padding: 15px;
+  border: 2px solid $black;
 }
 
 .turn-tracker {
@@ -78,4 +90,25 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
   font-size: 20px;
   padding: 40px;
   // text-align: center;
+}
+
+@media (max-width: 650px) {
+  .header {
+    font-size: 35px;
+  }
+
+  .log-in-buttons {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 500px) {
+  .header {
+    font-size: 25px;
+  }
+
+  .log-in-buttons {
+    font-size: 12px;
+    padding: 5px;
+  }
 }
