@@ -3,6 +3,7 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 
 body {
   background-image: url('http://www.publicdomainpictures.net/pictures/240000/velka/background-triangles-abstract.jpg');
+  // background-size: cover;
   color: $charcoal;
 }
 
@@ -12,39 +13,75 @@ body {
   font-family: 'Raleway', sans-serif;
 }
 
-.log-in-buttons {
+.log-in-buttons,
+.profile-buttons,
+.prior-games-buttons {
   background-color: #ff99c2;
   font-family: 'Raleway', sans-serif;
 }
 
 .turn-tracker {
+  color: darken(#416F94, 15%);
   font-family: 'Rammetto One', cursive;
+  // font-family: 'Raleway', sans-serif;
 }
 
 .user-x-prior-games,
 .user-x-profile {
-  background-color: $charcoal;
+  background-color: darken(#416F94, 15%);
   color: $tan;
-  font-family: 'Rammetto One', cursive;
+  font-family: 'Raleway', sans-serif;
 }
 
 .game-cell {
   background-color: $beige;
+  color: #7cbfcf;
+  font-family: 'Rammetto One', cursive;
 }
 
-.universal-response-modal,
+.universal-modal-content,
 .universal-response-modal-content,
-.log-in-modal {
-  background-color: $charcoal;
+.log-in-modal,
+.register-modal-content,
+.edit-password-modal-content,
+.view-by-id-modal-cotent,
+.winner-modal-content,
+.winner-model-content-wrapper {
+  background-color: darken(#416F94, 15%);
+  // background-image: url('https://imgur.com/vMKC8ne.png');
+  // background-image: url('https://imgur.com/BBMmyiC.png');
+  // background-image: url('https://imgur.com/6ZgV3wr.png');
+  // background-size: cover;
   color: $tan;
+  font-family: 'Raleway', sans-serif;
 }
 
 .form-control {
-  background-color: $tan;
-  color: $charcoal;
+  background-color: lighten(#3ADDBF, 30%);
 }
 
-// #inputEmail1::placeholder {
-//   color: $tan;
-//   opacity: 1;
-// }
+.submit-button {
+  background: darken($tan, 10%);
+  color: darken(#6C3FBF, 20%);
+}
+
+.close-modal {
+  background-color: darken(#416F94, 15%);
+  border-color: darken(#416F94, 15%);
+  color: $tan;
+}
+
+.space-div,
+.universal-space-div {
+  background-color: darken(#416F94, 15%);
+}
+
+#inputEmail1::placeholder,
+#inputEmail3::placeholder,
+#inputPassword1::placeholder,
+#inputPassword3::placeholder,
+#confirm-password::placeholder,
+#oldPassword::placeholder,
+#newPassword::placeholder  {
+  color: #6C3FBF;
+}

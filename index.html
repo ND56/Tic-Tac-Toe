@@ -28,6 +28,10 @@
         <div class="modal fade" id="log-in-modal" tabindex="-1">
           <div class="modal-dialog modal-lg">
             <div class="modal-content log-in-modal" id="log-in-modal-content">
+              <div>
+                <button type="button" class="close-modal" data-dismiss="modal"><span>&times;</span></button>
+              </div>
+              <div class="space-div"></div>
               <!-- start form for log-in modal-->
               <form class="form-horizontal" id="log-in-form">
                 <div class="form-group">
@@ -44,7 +48,7 @@
                 </div>
                 <div class="form-group">
                   <div class="col-sm-offset-2 col-sm-10">
-                    <button type="submit" class="btn btn-default">Log in!</button>
+                    <button type="submit" class="btn btn-default submit-button">Log in!</button>
                   </div>
                 </div>
             </form>
@@ -57,7 +61,11 @@
       <!-- start log-in screen register modal -->
         <div class="modal fade" id="register-modal" tabindex="-1">
           <div class="modal-dialog modal-lg">
-            <div class="modal-content" id="register-modal-content">
+            <div class="modal-content register-modal-content" id="register-modal-content">
+              <div>
+                <button type="button" class="close-modal" data-dismiss="modal"><span>&times;</span></button>
+              </div>
+              <div class="space-div"></div>
               <!-- start form for register modal-->
               <form class="form-horizontal" id="register-form">
                 <div class="form-group">
@@ -80,7 +88,7 @@
                 </div>
                 <div class="form-group">
                   <div class="col-sm-offset-2 col-sm-10">
-                    <button type="submit" class="btn btn-default">Create your account!</button>
+                    <button type="submit" class="btn btn-default submit-button">Create your account!</button>
                   </div>
                 </div>
             </form>
@@ -108,7 +116,11 @@
         <!-- start user profile edit password modal -->
           <div class="modal fade" id="edit-password-modal" tabindex="-1">
             <div class="modal-dialog modal-lg">
-              <div class="modal-content" id="edit-password-modal-content">
+              <div class="modal-content edit-password-modal-content" id="edit-password-modal-content">
+                <div>
+                  <button type="button" class="close-modal" data-dismiss="modal"><span>&times;</span></button>
+                </div>
+                <div class="space-div"></div>
                 <!-- start form for edit password modal-->
                 <form class="form-horizontal" id="edit-password-form">
                   <div class="form-group">
@@ -125,7 +137,7 @@
                   </div>
                   <div class="form-group">
                     <div class="col-sm-offset-2 col-sm-10">
-                      <button type="submit" class="btn btn-default">Change password!</button>
+                      <button type="submit" class="btn btn-default submit-button">Change password!</button>
                     </div>
                   </div>
               </form>
@@ -140,8 +152,14 @@
   <!-- start universal response modal for buttons that need to be reused in the same view -->
   <div class="modal fade universal-response-modal" id="universal-response-modal" tabindex="-1">
     <div class="modal-dialog modal-lg">
-      <div class="modal-content universal-response-modal-content" id="universal-response-modal-content">
-        ...
+      <div class="modal-content universal-modal-content">
+        <div>
+          <button type="button" class="close-modal" data-dismiss="modal"><span>&times;</span></button>
+        </div>
+        <div class="space-div"></div>
+        <div class="universal-response-modal-content" id="universal-response-modal-content">
+          ...
+        </div>
       </div>
     </div>
   </div>
@@ -174,7 +192,7 @@
               </div>
             </div>
 
-            <button class="col-xs-offset-3 col-xs-6 prior-games-buttons" id="return-to-prior-games-page">Return to Prior Games Page</button>
+            <button class="col-xs-offset-3 col-xs-6 prior-games-buttons return-to-prior-games-page-button" id="return-to-prior-games-page">Return to Prior Games Page</button>
           </div>
 
         </div>
@@ -182,7 +200,11 @@
           <!-- start view by id modal -->
             <div class="modal fade" id="view-by-id-modal" tabindex="-1">
               <div class="modal-dialog modal-lg">
-                <div class="modal-content" id="view-by-id-modal-content">
+                <div class="modal-content view-by-id-modal-cotent" id="view-by-id-modal-content">
+                  <div>
+                    <button type="button" class="close-modal" data-dismiss="modal"><span>&times;</span></button>
+                  </div>
+                  <div class="space-div"></div>
                   <!-- start form for view by id modal-->
                   <form class="form-horizontal" id="view-by-id-form">
                     <div class="form-group">
@@ -193,7 +215,7 @@
                     </div>
                     <div class="form-group">
                       <div class="col-sm-offset-2 col-sm-10">
-                        <button type="submit" class="btn btn-default">View Game!</button>
+                        <button type="submit" class="btn btn-default submit-button">View Game!</button>
                       </div>
                     </div>
                 </form>
@@ -213,17 +235,17 @@
             <div class="row">
               <div class="col-xs-4 game-cell" id="0"></div>
               <div class="col-xs-4 game-cell" id="1"></div>
-              <div class="col-xs-4 game-cell" id="2"></div>
+              <div class="col-xs-4 game-cell cell-2" id="2"></div>
             </div>
             <div class="row">
               <div class="col-xs-4 game-cell" id="3"></div>
               <div class="col-xs-4 game-cell" id="4"></div>
-              <div class="col-xs-4 game-cell" id="5"></div>
+              <div class="col-xs-4 game-cell cell-5" id="5"></div>
             </div>
             <div class="row">
-              <div class="col-xs-4 game-cell" id="6"></div>
-              <div class="col-xs-4 game-cell" id="7"></div>
-              <div class="col-xs-4 game-cell" id="8"></div>
+              <div class="col-xs-4 game-cell cell-6" id="6"></div>
+              <div class="col-xs-4 game-cell cell-7" id="7"></div>
+              <div class="col-xs-4 game-cell cell-8" id="8"></div>
             </div>
           </div>
         </div>
@@ -231,8 +253,14 @@
         <!-- Start Declare winner or tie modal -->
             <div class="modal fade" id="winner-modal" tabindex="-1">
               <div class="modal-dialog modal-lg">
-                <div class="modal-content" id="winner-modal-content">
-                  ...
+                <div class="modal-content winner-modal-content-wrapper">
+                  <div>
+                    <button type="button" class="close-modal" data-dismiss="modal"><span>&times;</span></button>
+                  </div>
+                  <div class="universal-space-div"></div>
+                  <div class="winner-modal-content" id="winner-modal-content">
+                    ...
+                  </div>
                 </div>
               </div>
             </div>

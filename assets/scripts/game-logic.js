@@ -27,9 +27,9 @@ const declareWinner = function (value) {
   store.game.over = true
   console.log('Congratulations ' + value + ', you won!')
   if (value === 'X') {
-    $('#winner-modal-content').text('Congratulations, ' + store.user.email + ', you won!')
+    $('#winner-modal-content').text('Congratulations, ' + store.user.email + ', you win!')
   } else {
-    $('#winner-modal-content').text('Congratulations, Player O, you won!')
+    $('#winner-modal-content').text('Congratulations, Player O, you win! Better luck next time, ' + store.user.email + '!')
   }
   $('#winner-modal').modal('show')
   // I would like to add a button to the modal

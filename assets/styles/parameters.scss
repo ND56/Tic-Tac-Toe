@@ -24,8 +24,26 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 }
 
 .game-cell {
-  border: 1px solid $black;
+  border-left-width: 7px;
+  border-top-width: 7px;
+  border-color: darken(#416F94, 15%);
+  border-style: solid;
   height: 125px;
+  font-size: 50px;
+  line-height: 125px;
+  text-align: center;
+}
+
+.cell-2,
+.cell-5,
+.cell-8 {
+  border-right-width: 7px;
+}
+
+.cell-6,
+.cell-7,
+.cell-8 {
+  border-bottom-width: 7px;
 }
 
 .view-prior-page,
@@ -36,10 +54,10 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 .user-x-prior-games,
 .user-x-profile {
   border: 1px solid $black;
-  font-size: 30px;
-  height: $header-height * .75;
-  line-height: $header-height * .75;
+  font-size: 35px;
   margin-bottom: 35px;
+  padding-bottom: 20px;
+  padding-top: 20px;
   text-align: center;
 }
 
@@ -48,20 +66,21 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
   margin: 35px 0 0;
 }
 
-.prior-games-buttons,
-.profile-buttons {
-  margin-top: 25px;
-}
-
 .log-in-screen {
   margin: 75px 0 0;
 }
 
-.log-in-buttons {
+.log-in-buttons,
+.profile-buttons,
+.prior-games-buttons {
+  border: 2px solid $black;
   font-size: 20px;
   margin-top: 25px;
   padding: 15px;
-  border: 2px solid $black;
+}
+
+.return-to-prior-games-page-button {
+  margin-bottom: 50px;
 }
 
 .turn-tracker {
@@ -82,14 +101,76 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 }
 
 .log-in-modal {
-  padding: 25px 25px 10px 0;
+  padding: 5px 25px 10px 0;
+}
+
+.register-modal-content {
+  padding: 5px 25px 10px 15px;
+}
+
+.view-by-id-modal-cotent {
+  padding: 5px 25px 10px 0;
+}
+
+.edit-password-modal-content {
+  padding: 5px 20px 0 0;
 }
 
 .universal-response-modal,
-.universal-response-modal-content {
+.universal-response-modal-content,
+.winner-modal-content,
+.winner-model-content-wrapper {
   font-size: 20px;
-  padding: 40px;
+  padding-bottom: 40px;
+  padding-left: 40px;
+  padding-right: 40px;
   // text-align: center;
+}
+
+.form-control {
+  border: 1px solid $black;
+}
+
+.close-modal {
+  font-size: 20px;
+  padding: 5px;
+  position: absolute;
+  right: 2%;
+  // margin-bottom: 50px;
+  // display: block;
+}
+
+.space-div {
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+}
+
+.universal-space-div {
+  padding-bottom: 30px;
+}
+
+.prior-games-table {
+
+}
+
+@media (max-width: 991px) {
+  .log-in-modal {
+    padding: 5px 25px 10px 15px;
+  }
+
+  .edit-password-modal-content {
+    padding: 5px 20px 0 18px;
+  }
+}
+
+@media (max-width: 767px) {
+  .view-by-id-modal-cotent {
+    padding: 5px 25px 10px;
+  }
+
+  .space-div {
+    margin-bottom: 20px;
+  }
 }
 
 @media (max-width: 650px) {
@@ -97,18 +178,68 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
     font-size: 35px;
   }
 
-  .log-in-buttons {
+  .user-x-prior-games,
+  .user-x-profile {
+    font-size: 25px;
+  }
+
+  .log-in-buttons,
+  .profile-buttons,
+  .prior-games-buttons {
     font-size: 15px;
   }
 }
 
 @media (max-width: 500px) {
+  .universal-response-modal,
+  .universal-response-modal-content,
+  .winner-modal-content,
+  .winner-model-content-wrapper {
+    font-size: 15px;
+  }
+
   .header {
     font-size: 25px;
   }
 
-  .log-in-buttons {
+  .turn-tracker {
+    font-size: 18px;
+    text-align: center;
+  }
+
+  .user-x-prior-games,
+  .user-x-profile {
+    font-size: 15px;
+  }
+
+  .log-in-buttons,
+  .profile-buttons,
+  .prior-games-buttons {
     font-size: 12px;
     padding: 5px;
   }
+
+  .game-cell {
+    border-left-width: 3px;
+    border-top-width: 3px;
+    border-color: darken(#416F94, 15%);
+    border-style: solid;
+    height: 75px;
+    font-size: 35px;
+    line-height: 75px;
+    text-align: center;
+  }
+
+  .cell-2,
+  .cell-5,
+  .cell-8 {
+    border-right-width: 3px;
+  }
+
+  .cell-6,
+  .cell-7,
+  .cell-8 {
+    border-bottom-width: 3px;
+  }
+
 }
