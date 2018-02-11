@@ -15,7 +15,7 @@ $(() => {
   $('#rotating-turn-tracker').hide()
   $('.view-prior-page').hide()
   $('#prior-games-wrapper').hide()
-  $('.prior-games-table').hide()
+  $('.prior-games-table-table').hide()
   $('.game-cell').on('click', events.selectSpace)
   $('#register-form').on('submit', events.onSignUp)
   $('#log-in-form').on('submit', events.onSignIn)
@@ -28,8 +28,3 @@ $(() => {
   $('#return-to-prior-games-page').on('click', events.onReturnToPriorGamesPage)
   $('#view-by-id-form').on('submit', events.viewGameByID)
 })
-
-// starting off with the
-// game board hidden because
-// first page is going
-// to be the log in page

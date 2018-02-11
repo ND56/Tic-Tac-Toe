@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Nick's Epic Tic-Tac-Toe Game</title>
+      <title>Tic-Tac-Toe</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
@@ -179,19 +179,26 @@
           </div>
 
           <div class="completed-games-wrapper" id="prior-games-wrapper">
-
             <div id="prior-games-table-wrapper">
-              <div class="prior-games-table col-xs-offset-2 col-xs-8" id="prior-games-table">
-                <ul>
-                  <li>Game ID: <span class="game-id-span" id="game-id-span"></span></li>
-                  <li>Cells: <span class="cells-span" id="cells-span"></span></li>
-                  <li>Winner: <span class="winner-span" id="winner-span"></span></li>
-                </ul>
+              <div class="new-table-wrapper col-xs-offset-2 col-xs-8">
+                <table class="prior-games-table-table" id="prior-games-table">
+                  <tr>
+                    <td class="title-cell">Game ID</td>
+                    <td class="fill-cell"><span class="game-id-span" id="game-id-span"></span></td>
+                  </tr>
+                  <tr>
+                    <td class="title-cell">Cells</td>
+                    <td class="fill-cell"><span class="cells-span" id="cells-span"></span></td>
+                  </tr>
+                  <tr>
+                    <td class="title-cell">Winner</td>
+                    <td class="fill-cell"><span class="winner-span" id="winner-span"></span></td>
+                  </tr>
+                </table>
               </div>
-              <div class="prior-games-table-expander">
+              <div class="prior-games-table-expander col-xs-offset-2 col-xs-8">
               </div>
             </div>
-
             <button class="col-xs-offset-3 col-xs-6 prior-games-buttons return-to-prior-games-page-button" id="return-to-prior-games-page">Return to Prior Games Page</button>
           </div>
 

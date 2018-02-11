@@ -97,8 +97,30 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 }
 
 .prior-games-table {
-  margin-top: 25px;
+  margin-top: 15px;
 }
+
+// styling new table
+
+td {
+  border: 2px solid $black;
+}
+
+.title-cell {
+  width: 75px;
+}
+
+.fill-cell {
+  text-align: center;
+  width: 300px;
+}
+
+.prior-games-table-table {
+  border: 1px solid $black;
+  margin: 15px auto;
+}
+
+// styling new table
 
 .log-in-modal {
   padding: 5px 25px 10px 0;
@@ -147,10 +169,6 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 
 .universal-space-div {
   padding-bottom: 30px;
-}
-
-.prior-games-table {
-
 }
 
 @media (max-width: 991px) {
@@ -240,6 +258,11 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
   .cell-7,
   .cell-8 {
     border-bottom-width: 3px;
+  }
+
+  body {
+    background-image: url('http://www.publicdomainpictures.net/pictures/240000/velka/background-triangles-abstract.jpg');
+    background-size: cover;
   }
 
 }
