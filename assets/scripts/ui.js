@@ -40,6 +40,7 @@ const onSignInSuccess = function (apiResponse) {
 }
 
 const onSignInFailure = function (apiResponse) {
+  console.log(apiResponse)
   $('#log-in-modal').modal('hide')
   $('#universal-response-modal-content').text('Failed to log in. The server responded with error code: ' + apiResponse.status + ', ' + apiResponse.statusText + '. Make sure you\'ve already registered and have entered your email and password correctly!')
   $('#universal-response-modal').modal('show')
