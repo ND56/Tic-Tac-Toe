@@ -28,10 +28,15 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
   border-top-width: 7px;
   border-color: darken(#416F94, 15%);
   border-style: solid;
-  height: 125px;
-  font-size: 50px;
-  line-height: 125px;
-  text-align: center;
+  height: 0px;
+  font-size: 250px;
+  padding-top: 16.666666%;
+  padding-bottom: 16.666666%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  // line-height: 125px;
+  // text-align: center;
 }
 
 .cell-2,
@@ -104,15 +109,20 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 
 td {
   border: 2px solid $black;
+  font-size: 20px
 }
 
 .title-cell {
-  width: 75px;
+  padding-left: 20px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  width: 125px;
 }
 
 .fill-cell {
   text-align: center;
   width: 300px;
+  padding: 5px;
 }
 
 .prior-games-table-table {
@@ -186,6 +196,18 @@ td {
   padding-bottom: 30px;
 }
 
+@media (max-width: 1180px) {
+  .game-cell {
+    font-size: 200px;
+  }
+}
+
+@media (max-width: 1100px) {
+  .game-cell {
+    font-size: 175px;
+  }
+}
+
 @media (max-width: 991px) {
   .log-in-modal {
     padding: 5px 25px 10px 15px;
@@ -193,6 +215,18 @@ td {
 
   .edit-password-modal-content {
     padding: 5px 20px 0 18px;
+  }
+}
+
+@media (max-width: 960px) {
+  .game-cell {
+    font-size: 150px;
+  }
+}
+
+@media (max-width: 830px) {
+  .game-cell {
+    font-size: 125px;
   }
 }
 
@@ -204,6 +238,30 @@ td {
   .space-div {
     margin-bottom: 20px;
   }
+}
+
+@media (max-width: 730px) {
+  .game-cell {
+    font-size: 100px;
+  }
+}
+
+@media (max-width: 699px) {
+  td {
+    font-size: 15px;
+  }
+
+  .title-cell {
+    padding-left: 15px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    width: 110px;
+  }
+
+  .fill-cell {
+    width: 200px;
+  }
+
 }
 
 @media (max-width: 650px) {
@@ -220,6 +278,21 @@ td {
   .profile-buttons,
   .prior-games-buttons {
     font-size: 15px;
+  }
+}
+
+@media (max-width: 630px) {
+  .game-cell {
+    font-size: 75px;
+  }
+}
+
+@media (max-width: 542px) {
+  .game-readout-cell {
+    height: 75px;
+    line-height: 75px;
+    text-align: center;
+    width: 75px;
   }
 }
 
@@ -253,31 +326,23 @@ td {
   }
 
   .game-cell {
-    border-left-width: 3px;
-    border-top-width: 3px;
-    border-color: darken(#416F94, 15%);
-    border-style: solid;
-    height: 75px;
-    font-size: 35px;
-    line-height: 75px;
+    font-size: 65px;
+  }
+
+}
+
+@media (max-width: 450px) {
+  .game-readout-cell {
+    height: 50px;
+    line-height: 50px;
     text-align: center;
+    width: 50px;
   }
+}
 
-  .cell-2,
-  .cell-5,
-  .cell-8 {
-    border-right-width: 3px;
+@media (max-width: 442px) {
+  .title-cell {
+    padding-left: 5px;
+    padding-right: 5px;
   }
-
-  .cell-6,
-  .cell-7,
-  .cell-8 {
-    border-bottom-width: 3px;
-  }
-
-  body {
-    background-image: url('http://www.publicdomainpictures.net/pictures/240000/velka/background-triangles-abstract.jpg');
-    background-size: cover;
-  }
-
 }

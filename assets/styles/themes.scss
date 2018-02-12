@@ -39,6 +39,27 @@ body {
   font-family: 'Rammetto One', cursive;
 }
 
+.title-cell {
+  background-color: #A75172;
+  border-color: darken(#416F94, 15%);
+  color: darken(#416F94, 15%);
+  font-family: 'Raleway', sans-serif;
+}
+
+.fill-cell {
+  background-color: #37B5B1;
+  border-color: darken(#416F94, 15%);
+  color: darken(#416F94, 15%);
+  font-family: 'Raleway', sans-serif;
+}
+
+.game-readout-cell {
+  background-color: $beige;
+  border-color: darken(#416F94, 15%);
+  color: #7cbfcf;
+  font-family: 'Rammetto One', cursive;
+}
+
 .universal-modal-content,
 .universal-response-modal-content,
 .log-in-modal,
