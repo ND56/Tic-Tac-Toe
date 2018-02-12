@@ -71,6 +71,11 @@ const onCreateNewGameSuccess = function (apiResponse) {
   store.game.over = false
 }
 
+const onCreateNewGameFailure = function (apiResponse) {
+  $('#universal-response-modal-content').text('Failed to create a new game. The server responded with error code: ' + apiResponse.status + ':, ' + apiResponse.statusText + '. The server might be down at the moment. Try again later!')
+  $('#universal-response-modal').modal('show')
+}
+
 const checkScore = function (array) {
   if (array[0] !== '' && array[0] === array[3] && array[0] === array[6]) {
     return array[0]
@@ -218,6 +223,21 @@ const onViewByIDFailure = function (apiResponse) {
   $('#universal-response-modal').modal('show')
 }
 
+const onSelectSpaceFailure = function (apiResponse) {
+  $('#universal-response-modal-content').text('Failed to update the game board. The server responded with with error code: ' + apiResponse.status + ':, ' + apiResponse.statusText + '. The serve might be down at the moment. Try again later!')
+  $('#universal-response-modal').modal('show')
+}
+
+const onLogOutFailure = function (apiResponse) {
+  $('#universal-response-modal-content').text('Failed to log out. The server responded with with error code: ' + apiResponse.status + ':, ' + apiResponse.statusText + '. The serve might be down at the moment. Try again later!')
+  $('#universal-response-modal').modal('show')
+}
+
+const onViewAllPriorFailure = function (apiResponse) {
+  $('#universal-response-modal-content').text('Failed to load prior games. The server responded with with error code: ' + apiResponse.status + ':, ' + apiResponse.statusText + '. The serve might be down at the moment. Try again later!')
+  $('#universal-response-modal').modal('show')
+}
+
 module.exports = {
   editGameBoard,
   editTurnTracker,
@@ -232,5 +252,9 @@ module.exports = {
   onViewAllSuccess,
   onViewByIDSuccess,
   onViewByIDFailure,
-  onInvalidSpace
+  onInvalidSpace,
+  onCreateNewGameFailure,
+  onSelectSpaceFailure,
+  onLogOutFailure,
+  onViewAllPriorFailure
 }

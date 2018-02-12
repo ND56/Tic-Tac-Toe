@@ -23,6 +23,7 @@ const createNewGame = function (event) {
   // send api request for new board
   api.newGame(data)
     .then(ui.onCreateNewGameSuccess)
+    .catch(ui.onCreateNewGameFailure)
 }
 
 const selectSpace = function (event) {
@@ -36,6 +37,7 @@ const selectSpace = function (event) {
     gameLogic.determineValue(gameBoard, cellValue, cellIdValue)
     gameLogic.checkForWin(gameBoard)
     api.updateGameStatus(cellIdValue, gameBoard)
+      .catch(ui.onSelectSpaceFailure)
   }
 }
 
@@ -76,6 +78,7 @@ const onLogOut = function (event) {
   event.preventDefault()
   api.logOut()
     .then(ui.onLogOutSuccess)
+    .catch(ui.onLogOutFailure)
 }
 
 const onViewPrior = function (event) {
@@ -95,6 +98,7 @@ const onViewAllPrior = function (event) {
   event.preventDefault()
   api.viewAllCompleteGames()
     .then(ui.onViewAllSuccess)
+    .catch(ui.onViewAllPriorFailure)
 }
 
 const onReturnToPriorGamesPage = function (event) {

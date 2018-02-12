@@ -80,7 +80,12 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 }
 
 .return-to-prior-games-page-button {
-  margin-bottom: 50px;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  font-size: 14px;
+  padding: 5px;
+  width: 125px;
 }
 
 .turn-tracker {
@@ -131,6 +136,7 @@ td {
   line-height: 100px;
   text-align: center;
   width: 100px;
+  font-size: 50px;
 }
 
 .log-in-modal {
@@ -213,6 +219,13 @@ td {
   }
 }
 
+@media (max-width: 775px) {
+  .return-to-prior-games-page-button {
+    font-size: 12px;
+    width: 100px;
+  }
+}
+
 @media (max-width: 767px) {
   .view-by-id-modal-cotent {
     padding: 5px 25px 10px;
@@ -261,6 +274,10 @@ td {
   .profile-buttons,
   .prior-games-buttons {
     font-size: 15px;
+  }
+
+  .return-to-prior-games-page-button {
+    font-size: 12px;
   }
 }
 
@@ -312,6 +329,12 @@ td {
     font-size: 65px;
   }
 
+  .return-to-prior-games-page-button {
+    font-size: 10px;
+    bottom: 5px;
+    right: 5px;
+  }
+
 }
 
 @media (max-width: 450px) {
@@ -320,6 +343,7 @@ td {
     line-height: 50px;
     text-align: center;
     width: 50px;
+    font-size: 35px;
   }
 }
 
