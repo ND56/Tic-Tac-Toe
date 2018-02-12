@@ -106,7 +106,6 @@ const onViewAllSuccess = function (apiResponse) {
   $('#user-x-prior-games').text(store.user.email + '\'s Completed Games')
   console.log(apiResponse)
   $('#prior-games-wrapper').show()
-  // trying to clone and append
   let gameWinner
   for (let i = 0; i < apiResponse.games.length; i++) {
     gameWinner = checkScore(apiResponse.games[i].cells)
@@ -117,19 +116,52 @@ const onViewAllSuccess = function (apiResponse) {
     } else {
       gameWinner = 'Tie Game'
     }
+    // cloning table for game & winner readout
     const newTableId = 'prior-games-table' + i
     const newIDSpanID = 'game-id-span' + i
-    const newCellsSpanID = 'cells-span' + i
+    // const newCellsSpanID = 'cells-span' + i
     const newWinnerSpanID = 'winner-span' + i
     const $clone = $('#prior-games-table').clone().show()
     $clone.attr('id', newTableId)
     $clone.appendTo('.prior-games-table-expander')
     $('#' + newTableId + ' #game-id-span').attr('id', newIDSpanID)
-    $('#' + newTableId + ' #cells-span').attr('id', newCellsSpanID)
+    // $('#' + newTableId + ' #cells-span').attr('id', newCellsSpanID)
     $('#' + newTableId + ' #winner-span').attr('id', newWinnerSpanID)
     $('#' + newIDSpanID).text(apiResponse.games[i].id)
-    $('#' + newCellsSpanID).text(apiResponse.games[i].cells)
+    // $('#' + newCellsSpanID).text(apiResponse.games[i].cells)
     $('#' + newWinnerSpanID).text(gameWinner)
+    // cloning table for cell readout
+    const newTableId2 = 'game-readout-table' + i
+    const newCell0 = 'readout-0' + i
+    const newCell1 = 'readout-1' + i
+    const newCell2 = 'readout-2' + i
+    const newCell3 = 'readout-3' + i
+    const newCell4 = 'readout-4' + i
+    const newCell5 = 'readout-5' + i
+    const newCell6 = 'readout-6' + i
+    const newCell7 = 'readout-7' + i
+    const newCell8 = 'readout-8' + i
+    const $clone2 = $('#game-readout-table').clone().show()
+    $clone2.attr('id', newTableId2)
+    $clone2.appendTo('.prior-games-table-expander')
+    $('#' + newTableId2 + ' #readout-0').attr('id', newCell0)
+    $('#' + newTableId2 + ' #readout-1').attr('id', newCell1)
+    $('#' + newTableId2 + ' #readout-2').attr('id', newCell2)
+    $('#' + newTableId2 + ' #readout-3').attr('id', newCell3)
+    $('#' + newTableId2 + ' #readout-4').attr('id', newCell4)
+    $('#' + newTableId2 + ' #readout-5').attr('id', newCell5)
+    $('#' + newTableId2 + ' #readout-6').attr('id', newCell6)
+    $('#' + newTableId2 + ' #readout-7').attr('id', newCell7)
+    $('#' + newTableId2 + ' #readout-8').attr('id', newCell8)
+    $('#' + newCell0).text(apiResponse.games[i].cells[0])
+    $('#' + newCell1).text(apiResponse.games[i].cells[1])
+    $('#' + newCell2).text(apiResponse.games[i].cells[2])
+    $('#' + newCell3).text(apiResponse.games[i].cells[3])
+    $('#' + newCell4).text(apiResponse.games[i].cells[4])
+    $('#' + newCell5).text(apiResponse.games[i].cells[5])
+    $('#' + newCell6).text(apiResponse.games[i].cells[6])
+    $('#' + newCell7).text(apiResponse.games[i].cells[7])
+    $('#' + newCell8).text(apiResponse.games[i].cells[8])
   }
 }
 
@@ -153,17 +185,49 @@ const onViewByIDSuccess = function (apiResponse) {
   $('#prior-games-wrapper').show()
   const newTableId = 'prior-games-table1'
   const newIDSpanID = 'game-id-span1'
-  const newCellsSpanID = 'cells-span1'
+  // const newCellsSpanID = 'cells-span1'
   const newWinnerSpanID = 'winner-span1'
   const $clone = $('#prior-games-table').clone().show()
   $clone.attr('id', newTableId)
   $clone.appendTo('.prior-games-table-expander')
   $('#' + newTableId + ' #game-id-span').attr('id', newIDSpanID)
-  $('#' + newTableId + ' #cells-span').attr('id', newCellsSpanID)
+  // $('#' + newTableId + ' #cells-span').attr('id', newCellsSpanID)
   $('#' + newTableId + ' #winner-span').attr('id', newWinnerSpanID)
   $('#' + newIDSpanID).text(apiResponse.game.id)
-  $('#' + newCellsSpanID).text(apiResponse.game.cells)
+  // $('#' + newCellsSpanID).text(apiResponse.game.cells)
   $('#' + newWinnerSpanID).text(gameWinner)
+  // cloning table for cell readout
+  const newTableId2 = 'game-readout-table1'
+  const newCell0 = 'readout-01'
+  const newCell1 = 'readout-11'
+  const newCell2 = 'readout-21'
+  const newCell3 = 'readout-31'
+  const newCell4 = 'readout-41'
+  const newCell5 = 'readout-51'
+  const newCell6 = 'readout-61'
+  const newCell7 = 'readout-71'
+  const newCell8 = 'readout-81'
+  const $clone2 = $('#game-readout-table').clone().show()
+  $clone2.attr('id', newTableId2)
+  $clone2.appendTo('.prior-games-table-expander')
+  $('#' + newTableId2 + ' #readout-0').attr('id', newCell0)
+  $('#' + newTableId2 + ' #readout-1').attr('id', newCell1)
+  $('#' + newTableId2 + ' #readout-2').attr('id', newCell2)
+  $('#' + newTableId2 + ' #readout-3').attr('id', newCell3)
+  $('#' + newTableId2 + ' #readout-4').attr('id', newCell4)
+  $('#' + newTableId2 + ' #readout-5').attr('id', newCell5)
+  $('#' + newTableId2 + ' #readout-6').attr('id', newCell6)
+  $('#' + newTableId2 + ' #readout-7').attr('id', newCell7)
+  $('#' + newTableId2 + ' #readout-8').attr('id', newCell8)
+  $('#' + newCell0).text(apiResponse.game.cells[0])
+  $('#' + newCell1).text(apiResponse.game.cells[1])
+  $('#' + newCell2).text(apiResponse.game.cells[2])
+  $('#' + newCell3).text(apiResponse.game.cells[3])
+  $('#' + newCell4).text(apiResponse.game.cells[4])
+  $('#' + newCell5).text(apiResponse.game.cells[5])
+  $('#' + newCell6).text(apiResponse.game.cells[6])
+  $('#' + newCell7).text(apiResponse.game.cells[7])
+  $('#' + newCell8).text(apiResponse.game.cells[8])
 }
 
 const onViewByIDFailure = function (apiResponse) {

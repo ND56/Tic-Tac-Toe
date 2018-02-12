@@ -16,6 +16,7 @@ $(() => {
   $('.view-prior-page').hide()
   $('#prior-games-wrapper').hide()
   $('.prior-games-table-table').hide()
+  $('#game-readout-table').hide()
   $('.game-cell').on('click', events.selectSpace)
   $('#register-form').on('submit', events.onSignUp)
   $('#log-in-form').on('submit', events.onSignIn)
