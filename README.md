@@ -1,8 +1,9 @@
 # Technologies Used
--html
--bootstrap
--css/sass
--javascript/jquery/ajax
+
+    (1) html.
+    (2) bootstrap.
+    (3) css/sass.
+    (4) javascript/jquery/ajax.
 
 # Planning Phase
 I tried to be as methodical as possible throughout development, starting with my planning phase. After our instructors provided us with a set of requirements for the web app, my first task was to draft a set of user stories to help focus my development phase. Some user stories I created include the following:
@@ -14,7 +15,7 @@ I tried to be as methodical as possible throughout development, starting with my
     (5) As a user, I will want to be able to view my past games so I can see how I've fared.
     (6) As a user, I want to know whose turn it is throughout the game.
 
-My next step was to draft a ['wireframe'](https://imgur.com/mpHsxTV) to help visualize what my final product was going to be.
+My next step was to draft a [wireframe](https://imgur.com/mpHsxTV) to help visualize what my final product was going to be.
 
 Finally, I then turned to the task of actually drafting my code.
 
