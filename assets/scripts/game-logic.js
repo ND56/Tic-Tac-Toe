@@ -3,8 +3,6 @@
 const ui = require('./ui')
 const store = require('./store')
 
-// let gameOver = false
-
 const determineValue = function (board, cellValue, cellIdValue) {
   let emptySpaces = 0
   board.forEach(function (arrElement) {
@@ -25,7 +23,6 @@ const determineValue = function (board, cellValue, cellIdValue) {
 
 const declareWinner = function (value) {
   store.game.over = true
-  console.log('Congratulations ' + value + ', you won!')
   if (value === 'X') {
     $('#winner-modal-content').text('Congratulations, ' + store.user.email + ', you win!')
   } else {
@@ -37,17 +34,14 @@ const declareWinner = function (value) {
   // until the button is clicked.
   $('.game-board').hide()
   $('.user-profile-page').show()
-  // console.log(gameOver)
 }
 
 const declareTie = function () {
   store.game.over = true
-  console.log('It\'s a tie! You\'re both just too good!')
   $('#winner-modal-content').text('It\'s a tie! You\'re both just too good!')
   $('#winner-modal').modal('show')
   $('.game-board').hide()
   $('.user-profile-page').show()
-  // console.log(gameOver)
 }
 
 const checkForWin = function (array) {
@@ -72,7 +66,6 @@ const checkForWin = function (array) {
   })) {
     declareTie()
   }
-  // if no condition met, nothing happens because game continues
 }
 
 module.exports = {

@@ -21,7 +21,6 @@ const createNewGame = function (event) {
   $('#first-turn-tracker #player-x-span').text(store.user.email)
   $('#first-turn-tracker').show()
   // send api request for new board
-  console.log(gameBoard)
   api.newGame(data)
     .then(ui.onCreateNewGameSuccess)
 }
@@ -29,17 +28,12 @@ const createNewGame = function (event) {
 const selectSpace = function (event) {
   event.preventDefault()
   const cellValue = event.target
-  // Was previously event.target.parentElement
-  console.log(event)
   const cellId = event.target.attributes.id
   const cellIdValue = $(cellId).val()
-  // the above 2 are the same as when I had buttons.
-  // I'm surprised they still work.
   if ($(cellValue).text() !== '') {
     ui.onInvalidSpace()
   } else {
     gameLogic.determineValue(gameBoard, cellValue, cellIdValue)
-    console.log(gameBoard) // for testing purposes
     gameLogic.checkForWin(gameBoard)
     api.updateGameStatus(cellIdValue, gameBoard)
   }
@@ -51,7 +45,6 @@ const onSignUp = function (event) {
   api.create(data)
     .then(ui.onSignUpSuccess)
     .catch(ui.onSignUpFailure)
-  // adding to clear register form
   $('#register-form').each(function () {
     this.reset()
   })
@@ -88,7 +81,6 @@ const onLogOut = function (event) {
 const onViewPrior = function (event) {
   event.preventDefault()
   $('.user-profile-page').hide()
-  // need to comment out below unless logged in
   $('#user-x-prior-games').text(store.user.email + '\'s Prior Games')
   $('.view-prior-page').show()
 }
@@ -101,7 +93,6 @@ const onReturn = function (event) {
 
 const onViewAllPrior = function (event) {
   event.preventDefault()
-  console.log('button works!')
   api.viewAllCompleteGames()
     .then(ui.onViewAllSuccess)
 }
@@ -109,9 +100,7 @@ const onViewAllPrior = function (event) {
 const onReturnToPriorGamesPage = function (event) {
   event.preventDefault()
   $('#prior-games-wrapper').hide()
-  // need to reset the prior games table
   $('.prior-games-table-expander').empty()
-  // need to comment out below unless logged in
   $('#user-x-prior-games').text(store.user.email + '\'s Prior Games')
   $('#view-button-wrapper').show()
 }

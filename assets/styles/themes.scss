@@ -3,13 +3,11 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 
 body {
   background-image: url('http://www.publicdomainpictures.net/pictures/240000/velka/background-triangles-abstract.jpg');
-  // background-size: cover;
   color: $charcoal;
 }
 
 .header {
   background-color: $tan;
-  // font-family: 'Rammetto One', cursive;
   font-family: 'Raleway', sans-serif;
 }
 
@@ -23,7 +21,6 @@ body {
 .turn-tracker {
   color: darken(#416F94, 15%);
   font-family: 'Rammetto One', cursive;
-  // font-family: 'Raleway', sans-serif;
 }
 
 .user-x-prior-games,
@@ -69,10 +66,6 @@ body {
 .winner-modal-content,
 .winner-model-content-wrapper {
   background-color: darken(#416F94, 15%);
-  // background-image: url('https://imgur.com/vMKC8ne.png');
-  // background-image: url('https://imgur.com/BBMmyiC.png');
-  // background-image: url('https://imgur.com/6ZgV3wr.png');
-  // background-size: cover;
   color: $tan;
   font-family: 'Raleway', sans-serif;
 }

@@ -2,16 +2,12 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 
 .header {
-  // border: 2px solid $black;
-  // border: 20px groove $tan;
-  // testing new border
   border-top-style: double;
   border-bottom-style: double;
   border-top-color: #7cbfcf;
   border-bottom-color: #7cbfcf;
   border-top-width: 15px;
   border-bottom-width: 15px;
-  // testing new border
   font-size: 50px;
   margin-top: 40px;
   padding-bottom: 10px;
@@ -36,8 +32,6 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
   display: flex;
   align-items: center;
   justify-content: center;
-  // line-height: 125px;
-  // text-align: center;
 }
 
 .cell-2,
@@ -96,7 +90,6 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 
 .prior-games-container {
   border: 1px solid $black;
-  // height: 85px;
   margin-top: 25px;
   padding: 15px;
   text-align: left;
@@ -105,8 +98,6 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 .prior-games-table {
   margin-top: 15px;
 }
-
-// styling new table
 
 td {
   border: 2px solid $black;
@@ -131,10 +122,6 @@ td {
   margin: 15px auto;
 }
 
-// styling new table
-
-// Styling new table 2
-
 .game-readout-table {
   margin: 10px auto;
 }
@@ -145,8 +132,6 @@ td {
   text-align: center;
   width: 100px;
 }
-
-// Styling new table 2
 
 .log-in-modal {
   padding: 5px 25px 10px 0;
@@ -172,7 +157,6 @@ td {
   padding-bottom: 40px;
   padding-left: 40px;
   padding-right: 40px;
-  // text-align: center;
 }
 
 .form-control {
@@ -184,8 +168,6 @@ td {
   padding: 5px;
   position: absolute;
   right: 2%;
-  // margin-bottom: 50px;
-  // display: block;
 }
 
 .space-div {

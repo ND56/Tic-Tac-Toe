@@ -149,7 +149,7 @@
 
   <!-- End User profile page -->
 
-  <!-- start universal response modal for buttons that need to be reused in the same view -->
+  <!-- start universal response modal -->
   <div class="modal fade universal-response-modal" id="universal-response-modal" tabindex="-1">
     <div class="modal-dialog modal-lg">
       <div class="modal-content universal-modal-content">
@@ -163,9 +163,9 @@
       </div>
     </div>
   </div>
-  <!-- end universal response modal for buttons that need to be reused in the same view -->
+  <!-- end universal response modal -->
 
-  <!-- Start View Prior Page -->
+  <!-- Start View Prior Games Page -->
         <div class="view-prior-page">
 
           <div class="col-xs-offset-2 col-xs-8 user-x-prior-games" id="user-x-prior-games">
@@ -181,23 +181,19 @@
           <div class="completed-games-wrapper" id="prior-games-wrapper">
             <div id="prior-games-table-wrapper">
               <div class="new-table-wrapper col-xs-offset-2 col-xs-8">
-                <!-- Table for game & winner readout -->
+                <!-- Start table for game ID & winner readout -->
                 <table class="prior-games-table-table" id="prior-games-table">
                   <tr>
                     <td class="title-cell">Game ID</td>
                     <td class="fill-cell"><span class="game-id-span" id="game-id-span"></span></td>
                   </tr>
-                  <!-- <tr>
-                    <td class="title-cell">Cells</td>
-                    <td class="fill-cell"><span class="cells-span" id="cells-span"></span></td>
-                  </tr> -->
                   <tr>
                     <td class="title-cell">Winner</td>
                     <td class="fill-cell"><span class="winner-span" id="winner-span"></span></td>
                   </tr>
                 </table>
-                <!-- Table for game & winner readout -->
-                <!-- Table for cell readout -->
+                <!-- End table for game ID & winner readout -->
+                <!-- Start table for cell readout -->
                 <table class="game-readout-table" id="game-readout-table">
                   <tr>
                     <td class="game-readout-cell" id="readout-0"></td>
@@ -215,14 +211,13 @@
                     <td class="game-readout-cell" id="readout-8"></td>
                   </tr>
                 </table>
-                <!-- Table for cell readout -->
+                <!-- End table for cell readout -->
               </div>
               <div class="prior-games-table-expander col-xs-offset-2 col-xs-8">
               </div>
             </div>
             <button class="col-xs-offset-3 col-xs-6 prior-games-buttons return-to-prior-games-page-button" id="return-to-prior-games-page">Return to Prior Games Page</button>
           </div>
-
         </div>
 
           <!-- start view by id modal -->
@@ -253,7 +248,7 @@
             </div>
           <!-- end view by id modal -->
 
-    <!-- End View Prior Page -->
+    <!-- End View Prior Games Page -->
 
   <!-- Start Game board -->
         <div class="row game-board">
@@ -292,17 +287,9 @@
                 </div>
               </div>
             </div>
-            <!-- I need to make a lot of edits to this modal,
-            including that I need to add an exit button.
-            Clicking off the modal currently exits, but
-            the user shouldn't have to rely on that. -->
         <!-- End declare winner or tie modal -->
-    <!-- End Game Board -->
 
+    <!-- End Game Board -->
       </div>
     </body>
-
-
-
-
 </html>

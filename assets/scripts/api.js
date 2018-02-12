@@ -2,7 +2,6 @@
 
 const config = require('./config')
 const store = require('./store')
-// const gameLogic = require('./game-logic')
 
 const create = function (formFieldsData) {
   return $.ajax({
@@ -62,7 +61,6 @@ const newGame = function (formFieldsData) {
 }
 
 const updateGameStatus = function (index, array) {
-  // console.log(gameLogic.gameOver)
   const apiObject = {
     'game': {
       'cell': {
@@ -72,8 +70,6 @@ const updateGameStatus = function (index, array) {
       'over': store.game.over
     }
   }
-  console.log(apiObject)
-  // console.log(gameLogic.gameOver)
   return $.ajax({
     url: config.apiOrigin + '/games/' + store.game.id,
     method: 'PATCH',
