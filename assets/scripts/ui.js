@@ -60,7 +60,7 @@ const onEditPasswordSuccess = function (apiResponse) {
 const onEditPasswordFailure = function (apiResponse) {
   console.log(apiResponse)
   $('#edit-password-modal').modal('hide')
-  $('#universal-response-modal-content').text('You failed to change your password. The server responded with responded with error code: ' + apiResponse.status + ':, ' + apiResponse.statusText + '. Make sure you entered your old password correctly!')
+  $('#universal-response-modal-content').text('You failed to change your password. The server responded with error code: ' + apiResponse.status + ':, ' + apiResponse.statusText + '. Make sure you entered your old password correctly!')
   $('#universal-response-modal').modal('show')
 }
 

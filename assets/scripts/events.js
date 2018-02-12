@@ -51,6 +51,10 @@ const onSignUp = function (event) {
   api.create(data)
     .then(ui.onSignUpSuccess)
     .catch(ui.onSignUpFailure)
+  // adding to clear register form
+  $('#register-form').each(function () {
+    this.reset()
+  })
 }
 
 const onSignIn = function (event) {
@@ -59,6 +63,9 @@ const onSignIn = function (event) {
   api.signIn(data)
     .then(ui.onSignInSuccess)
     .catch(ui.onSignInFailure)
+  $('#log-in-form').each(function () {
+    this.reset()
+  })
 }
 
 const onEditPassword = function (event) {
@@ -67,6 +74,9 @@ const onEditPassword = function (event) {
   api.editPassword(data)
     .then(ui.onEditPasswordSuccess)
     .catch(ui.onEditPasswordFailure)
+  $('#edit-password-form').each(function () {
+    this.reset()
+  })
 }
 
 const onLogOut = function (event) {
@@ -112,6 +122,9 @@ const viewGameByID = function (event) {
   api.onViewGameByID(gameID)
     .then(ui.onViewByIDSuccess)
     .catch(ui.onViewByIDFailure)
+  $('#view-by-id-form').each(function () {
+    this.reset()
+  })
 }
 
 module.exports = {
