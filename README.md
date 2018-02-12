@@ -1,67 +1,33 @@
+# Technologies Used
+-html
+-bootstrap
+-css/sass
+-javascript/jquery/ajax
 
+# Planning Phase
+I tried to be as methodical as possible throughout development, starting with my planning phase. After our instructors provided us with a set of requirements for the web app, my first task was to draft a set of user stories to help focus my development phase. Some user stories I created include the following:
 
+    (1) As a user, I will want to register my account so that I can play the game.
+    (2) As a user, I will want to be able to edit my profile (email, password) to keep it up-to-date.
+    (3) As a user, I want to be able to log in to a saved profile.
+    (4) As a user, I want to be able to start a new game.
+    (5) As a user, I will want to be able to view my past games so I can see how I've fared.
+    (6) As a user, I want to know whose turn it is throughout the game.
 
-**NOTE TO SELF: NEED TO EMPTY THIS AND REPLACE WITH MY OWN README**
+My next step was to draft a ['wireframe'](https://imgur.com/mpHsxTV) to help visualize what my final product was going to be.
 
+Finally, I then turned to the task of actually drafting my code.
 
-[![General Assembly Logo](https://camo.githubusercontent.com/1a91b05b8f4d44b5bbfb83abac2b0996d8e26c92/687474703a2f2f692e696d6775722e636f6d2f6b6538555354712e706e67)](https://generalassemb.ly/education/web-development-immersive)
+# Development Phase
+During development, I did my best to focus on one issue at a time to avoid getting overwhelmed. To that end, I did my best to stick to the following development schedule:
 
-# browser-template
+  (1) The first step I took was to create the code version of the tic-tac-toe board and the logic that drives the game.
+  (2) My second step was to implement the GUI representation of my tic-tac-toe board and ensure that user manipulation would impact both the GUI and code versions of the tic-tac-toe board.
+  (3) My third step was to implement the authentication process, ensuring that users could sign up, sign in, change their passwords, and sign-out.
+  (4) My fourth major step was to implement game api requests, allowing for game creation/updates to be sent to the api and for users to request prior game information from the api.
+  (5) My final major task was to implement stylistic edits.
 
-A template for starting front-end projects. Webpack for `require` system, build
-pipeline, and development server. Boostrap and Handlebars.js included. No
-front-end frameworks included.
+Throughout the development phase, I did my best to maintain good branch/commit practices. This, along with careful implementation and step-by-step testing of my code, allowed me to troubleshoot bugs relatively quickly.
 
-## Installation
-
-1.  [Download](../../archive/master.zip) this template.
-1.  Unzip and rename the template directory.
-1.  Empty [`README.md`](README.md) and fill with your own content.
-1.  Replace all instances of `ga-wdi-boston.browser-template` with the name of your project.
-1.  Move into the new project and `git init`
-1.  Add all of the files in your project with the command `git add -A`
-  -   *Note:* THIS IS THE ONLY TIME YOU SHOULD RUN THIS COMMAND
-1.  Commit all of your files with the command `git commit`
-  -   Your commit title should read `Initial commit`
-1.  Install dependencies with `npm install`.
-
-## Structure
-
-Developers should store JavaScript files in [`assets/scripts`](assets/scripts).
-The "manifest" or entry-point is
-[`assets/scripts/index.js`](assets/scripts/index.js). In general, only
-application initialization goes in this file. It's normal for developers to
-start putting all code in this file, but encourage them to break out different
-responsibilities and use the `require` syntax put references where they're
-needed.
-
-Developers should set `config.apiOrigins.production` (and
-`config.apiOrigins.development` if it differs from the default).  With
-`apiOrigins` set, developers may rely on `config.apiOrigin` as the base for API
-URLs.
-
-Developers should store styles in [`assets/styles`](assets/styles) and load them
-from [`assets/styles/index.scss`](assets/styles/index.scss).
-
-Developers should use [getFormFields](forms.md) to retrieve form data to send to
-an API.
-
-To deploy a browser-template based SPA, run `grunt deploy`.
-
-## Tasks
-
-Developers should run these often!
-
--   `grunt nag` or just `grunt`: runs code quality analysis tools on your code
-    and complains
--   `grunt make-standard`: reformats all your code in the JavaScript Standard Style
--   `grunt <server|serve|s>`: generates bundles, watches, and livereloads
--   `grunt test`: runs any automated tests, depends on `grunt build`
--   `grunt build`: place bundled styles and scripts where `index.html` can find
-    them
-
-## [License](LICENSE)
-
-1.  All content is licensed under a CC­BY­NC­SA 4.0 license.
-1.  All software code is licensed under GNU GPLv3. For commercial use or
-    alternative licensing, please contact legal@ga.co.
+# Issues for Future Iterations
+With greater deadline flexibility, I would've liked to have spent more time on  styling the web app. In addition, I would've also liked to have built out more funtionality for user requests; at the moment, users can request a full list of completed games, but I would like to allow them to make more directed requests (e.g., a succinct readout of how many games a user has won, etc.). Finally, I would like to make the game run across multiple platforms at the same time (as opposed to having both users play on the same platform).
