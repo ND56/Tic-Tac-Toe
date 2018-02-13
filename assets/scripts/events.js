@@ -84,7 +84,7 @@ const onLogOut = function (event) {
 const onViewPrior = function (event) {
   event.preventDefault()
   $('.user-profile-page').hide()
-  $('#user-x-prior-games').text(store.user.email + '\'s Prior Games')
+  $('#user-x-prior-games').text(store.user.email + '\'s prior games')
   $('.view-prior-page').show()
 }
 
@@ -105,7 +105,7 @@ const onReturnToPriorGamesPage = function (event) {
   event.preventDefault()
   $('#prior-games-wrapper').hide()
   $('.prior-games-table-expander').empty()
-  $('#user-x-prior-games').text(store.user.email + '\'s Prior Games')
+  $('#user-x-prior-games').text(store.user.email + '\'s prior Games')
   $('#view-button-wrapper').show()
 }
 

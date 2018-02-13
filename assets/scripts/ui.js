@@ -35,7 +35,7 @@ const onSignInSuccess = function (apiResponse) {
   $('#universal-response-modal-content').text('Log-in successful. Welcome back, ' + apiResponse.user.email + '!')
   $('#universal-response-modal').modal('show')
   $('.log-in-screen').hide()
-  $('#user-x-profile').text(apiResponse.user.email + '\'s Profile')
+  $('#user-x-profile').text(apiResponse.user.email + '\'s profile')
   $('.user-profile-page').show()
 }
 
@@ -100,7 +100,7 @@ const checkScore = function (array) {
 
 const onViewAllSuccess = function (apiResponse) {
   $('#view-button-wrapper').hide()
-  $('#user-x-prior-games').text(store.user.email + '\'s Completed Games')
+  $('#user-x-prior-games').text(store.user.email + '\'s completed games')
   $('#prior-games-wrapper').show()
   let gameWinner
   for (let i = 0; i < apiResponse.games.length; i++) {
@@ -170,7 +170,7 @@ const onViewByIDSuccess = function (apiResponse) {
   }
   $('#view-by-id-modal').modal('hide')
   $('#view-button-wrapper').hide()
-  $('#user-x-prior-games').text(store.user.email + '\'s Selected Game')
+  $('#user-x-prior-games').text(store.user.email + '\'s selected game')
   $('#prior-games-wrapper').show()
   // cloning table for game ID and winner readout
   const newTableId = 'prior-games-table1'
