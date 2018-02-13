@@ -29,9 +29,6 @@ const declareWinner = function (value) {
     $('#winner-modal-content').text('Congratulations, Player O, you win! Better luck next time, ' + store.user.email + '!')
   }
   $('#winner-modal').modal('show')
-  // I would like to add a button to the modal
-  // and make it so the view doesn't change
-  // until the button is clicked.
   $('.game-board').hide()
   $('.user-profile-page').show()
 }
