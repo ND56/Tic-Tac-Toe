@@ -108,7 +108,7 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 
 td {
   border: 2px solid $black;
-  font-size: 20px
+  font-size: 20px;
 }
 
 .title-cell {
@@ -404,6 +404,16 @@ td {
   #view-ID-prior,
   #return-to-profile {
     padding: 3px;
+  }
+
+}
+
+@media (max-width: 382px) {
+
+  #view-all-prior,
+  #view-ID-prior,
+  #return-to-profile {
+    font-size: 10px;
   }
 
 }
