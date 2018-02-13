@@ -1,6 +1,11 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 
+.new-big-wrapper {
+  max-width: 623px;
+  margin: 0 auto;
+}
+
 .header {
   border-top-style: double;
   border-bottom-style: double;
@@ -16,7 +21,7 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 }
 
 .game-board {
-  margin-top: 50px;
+  margin-top: 25px;
   margin-bottom: 50px;
 }
 
@@ -28,7 +33,7 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
   border-color: darken(#416F94, 15%);
   border-style: solid;
   height: 0px;
-  font-size: 250px;
+  font-size: 125px;
   padding-top: 16.666666%;
   padding-bottom: 16.666666%;
   display: flex;
@@ -187,18 +192,6 @@ td {
   padding-bottom: 30px;
 }
 
-@media (max-width: 1180px) {
-  .game-cell {
-    font-size: 200px;
-  }
-}
-
-@media (max-width: 1100px) {
-  .game-cell {
-    font-size: 175px;
-  }
-}
-
 @media (max-width: 991px) {
   .log-in-modal {
     padding: 5px 25px 10px 15px;
@@ -206,18 +199,6 @@ td {
 
   .edit-password-modal-content {
     padding: 5px 20px 0 18px;
-  }
-}
-
-@media (max-width: 960px) {
-  .game-cell {
-    font-size: 150px;
-  }
-}
-
-@media (max-width: 830px) {
-  .game-cell {
-    font-size: 125px;
   }
 }
 
