@@ -14,15 +14,15 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
   border-top-width: 15px;
   border-bottom-width: 15px;
   font-size: 50px;
-  margin-top: 40px;
+  margin-top: 20px;
   padding-bottom: 10px;
   padding-top: 15px;
   text-align: center;
 }
 
 .game-board {
-  margin-top: 25px;
-  margin-bottom: 50px;
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
 
 .game-cell {
@@ -192,6 +192,17 @@ td {
   padding-bottom: 30px;
 }
 
+.game-id-tracker {
+  border: 3px solid $black;
+  clear: both;
+  margin-bottom: 25px;
+  text-align: center;
+  width: 150px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 5px;
+}
+
 @media (max-width: 991px) {
   .log-in-modal {
     padding: 5px 25px 10px 15px;
@@ -253,6 +264,12 @@ td {
     font-size: 25px;
   }
 
+  .game-id-tracker {
+    font-size: 12px;
+    padding: 2px;
+    width: 115px;
+  }
+
   .log-in-buttons,
   .profile-buttons,
   .prior-games-buttons {
@@ -305,6 +322,10 @@ td {
   .cell-7,
   .cell-8 {
     border-bottom-width: 4px;
+  }
+
+  .game-id-tracker {
+    border-width: 2px;
   }
 
 }

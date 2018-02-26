@@ -102,6 +102,15 @@ button:hover {
   background-color: darken(#416F94, 15%);
 }
 
+.game-id-tracker {
+  background-color: #79B377;
+  border-color: darken(#416F94, 15%);
+  color: darken(#416F94, 15%);
+  font-family: 'Raleway', sans-serif;
+  border-left:  0;
+  border-right: 0;
+}
+
 #inputEmail1::placeholder,
 #inputEmail3::placeholder,
 #inputPassword1::placeholder,

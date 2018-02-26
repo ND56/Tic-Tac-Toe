@@ -112,8 +112,46 @@ const onReturnToPriorGamesPage = function (event) {
 const viewGameByID = function (event) {
   event.preventDefault()
   const gameID = $('#game-id-input').val()
+  // reset the board
+  gameBoard.forEach(function (element, index, arr) {
+    arr[index] = ''
+  })
+  // reset the ui
+  $('.game-cell').text('')
+  //
   api.onViewGameByID(gameID)
     .then(ui.onViewByIDSuccess)
+    .then(function () {
+      if (store.game.over === false) {
+        // update game array
+        gameBoard[0] = store.game.cells[0]
+        gameBoard[1] = store.game.cells[1]
+        gameBoard[2] = store.game.cells[2]
+        gameBoard[3] = store.game.cells[3]
+        gameBoard[4] = store.game.cells[4]
+        gameBoard[5] = store.game.cells[5]
+        gameBoard[6] = store.game.cells[6]
+        gameBoard[7] = store.game.cells[7]
+        gameBoard[8] = store.game.cells[8]
+        // update game ui
+        $('#0').text(store.game.cells[0])
+        $('#1').text(store.game.cells[1])
+        $('#2').text(store.game.cells[2])
+        $('#3').text(store.game.cells[3])
+        $('#4').text(store.game.cells[4])
+        $('#5').text(store.game.cells[5])
+        $('#6').text(store.game.cells[6])
+        $('#7').text(store.game.cells[7])
+        $('#8').text(store.game.cells[8])
+      } else {
+        $('#view-button-wrapper').show()
+        $('.view-prior-page').show()
+        $('.game-board').hide()
+        $('#rotating-turn-tracker').hide()
+        $('#universal-response-modal-content').text('You already completed that game! Enter an ID for an uncompleted game!')
+        $('#universal-response-modal').modal('show')
+      }
+    })
     .catch(ui.onViewByIDFailure)
   $('#view-by-id-form').each(function () {
     this.reset()

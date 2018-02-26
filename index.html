@@ -109,7 +109,7 @@
           </div>
           <div class="profile-button-wrapper">
             <button class="col-xs-offset-3 col-xs-6 profile-buttons" id="create-new-game">Create New Game</button>
-            <button class="col-xs-offset-3 col-xs-6 profile-buttons" id="view-prior-games">View Prior Games</button>
+            <button class="col-xs-offset-3 col-xs-6 profile-buttons" id="view-prior-games">Prior Games</button>
             <button class="col-xs-offset-3 col-xs-6 profile-buttons" id="change-password" data-toggle="modal" data-target="#edit-password-modal">Change Password</button>
             <button class="col-xs-offset-3 col-xs-6 profile-buttons" id="log-out">Log Out</button>
           </div>
@@ -176,7 +176,7 @@
 
           <div class="view-button-wrapper" id="view-button-wrapper">
             <button class="col-xs-offset-3 col-xs-6 prior-games-buttons" id="view-all-prior">View All Completed Games</button>
-            <button class="col-xs-offset-3 col-xs-6 prior-games-buttons" id="view-ID-prior" data-toggle="modal" data-target="#view-by-id-modal">View Completed Games by ID</button>
+            <button class="col-xs-offset-3 col-xs-6 prior-games-buttons" id="view-ID-prior" data-toggle="modal" data-target="#view-by-id-modal">Complete Unfinished Game</button>
             <button class="col-xs-offset-3 col-xs-6 prior-games-buttons" id="return-to-profile">Return to Profile Page</button>
           </div>
 
@@ -240,7 +240,7 @@
                     </div>
                     <div class="form-group">
                       <div class="col-sm-offset-2 col-sm-10">
-                        <button type="submit" class="btn btn-default submit-button">View Game!</button>
+                        <button type="submit" class="btn btn-default submit-button">Select Game!</button>
                       </div>
                     </div>
                 </form>
@@ -272,6 +272,10 @@
               <div class="col-xs-4 game-cell cell-7" id="7"></div>
               <div class="col-xs-4 game-cell cell-8" id="8"></div>
             </div>
+          </div>
+
+          <div class="game-id-tracker">
+            Game ID: <span id="game-id-tracker-span">XXXX</span>
           </div>
         </div>
 

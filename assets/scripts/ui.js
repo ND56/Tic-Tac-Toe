@@ -53,7 +53,7 @@ const onEditPasswordSuccess = function (apiResponse) {
 
 const onEditPasswordFailure = function (apiResponse) {
   $('#edit-password-modal').modal('hide')
-  $('#universal-response-modal-content').text('You failed to change your password. The server responded with error code: ' + apiResponse.status + ':, ' + apiResponse.statusText + '. Make sure you entered your old password correctly!')
+  $('#universal-response-modal-content').text('You failed to change your password. The server responded with error code: ' + apiResponse.status + ', ' + apiResponse.statusText + '. Make sure you entered your old password correctly!')
   $('#universal-response-modal').modal('show')
 }
 
@@ -69,10 +69,11 @@ const onCreateNewGameSuccess = function (apiResponse) {
   $('.game-board').show()
   store.game = apiResponse.game
   store.game.over = false
+  $('#game-id-tracker-span').text(apiResponse.game.id)
 }
 
 const onCreateNewGameFailure = function (apiResponse) {
-  $('#universal-response-modal-content').text('Failed to create a new game. The server responded with error code: ' + apiResponse.status + ':, ' + apiResponse.statusText + '. The server might be down at the moment. Try again later!')
+  $('#universal-response-modal-content').text('Failed to create a new game. The server responded with error code: ' + apiResponse.status + ', ' + apiResponse.statusText + '. The server might be down at the moment. Try again later!')
   $('#universal-response-modal').modal('show')
 }
 
@@ -159,62 +160,32 @@ const onViewAllSuccess = function (apiResponse) {
 }
 
 const onViewByIDSuccess = function (apiResponse) {
-  let gameWinner
-  gameWinner = checkScore(apiResponse.game.cells)
-  if (gameWinner === 'X' || gameWinner === 'x') {
-    gameWinner = store.user.email
-  } else if (gameWinner === 'o' || gameWinner === 'O') {
-    gameWinner = 'Challenger'
-  } else {
-    gameWinner = 'Tie Game'
-  }
+  store.game = apiResponse.game
   $('#view-by-id-modal').modal('hide')
-  $('#view-button-wrapper').hide()
-  $('#user-x-prior-games').text(store.user.email + '\'s selected game')
-  $('#prior-games-wrapper').show()
-  // cloning table for game ID and winner readout
-  const newTableId = 'prior-games-table1'
-  const newIDSpanID = 'game-id-span1'
-  const newWinnerSpanID = 'winner-span1'
-  const $clone = $('#prior-games-table').clone().show()
-  $clone.attr('id', newTableId)
-  $clone.appendTo('.prior-games-table-expander')
-  $('#' + newTableId + ' #game-id-span').attr('id', newIDSpanID)
-  $('#' + newTableId + ' #winner-span').attr('id', newWinnerSpanID)
-  $('#' + newIDSpanID).text(apiResponse.game.id)
-  $('#' + newWinnerSpanID).text(gameWinner)
-  // cloning table for cell readout
-  const newTableId2 = 'game-readout-table1'
-  const newCell0 = 'readout-01'
-  const newCell1 = 'readout-11'
-  const newCell2 = 'readout-21'
-  const newCell3 = 'readout-31'
-  const newCell4 = 'readout-41'
-  const newCell5 = 'readout-51'
-  const newCell6 = 'readout-61'
-  const newCell7 = 'readout-71'
-  const newCell8 = 'readout-81'
-  const $clone2 = $('#game-readout-table').clone().show()
-  $clone2.attr('id', newTableId2)
-  $clone2.appendTo('.prior-games-table-expander')
-  $('#' + newTableId2 + ' #readout-0').attr('id', newCell0)
-  $('#' + newTableId2 + ' #readout-1').attr('id', newCell1)
-  $('#' + newTableId2 + ' #readout-2').attr('id', newCell2)
-  $('#' + newTableId2 + ' #readout-3').attr('id', newCell3)
-  $('#' + newTableId2 + ' #readout-4').attr('id', newCell4)
-  $('#' + newTableId2 + ' #readout-5').attr('id', newCell5)
-  $('#' + newTableId2 + ' #readout-6').attr('id', newCell6)
-  $('#' + newTableId2 + ' #readout-7').attr('id', newCell7)
-  $('#' + newTableId2 + ' #readout-8').attr('id', newCell8)
-  $('#' + newCell0).text(apiResponse.game.cells[0])
-  $('#' + newCell1).text(apiResponse.game.cells[1])
-  $('#' + newCell2).text(apiResponse.game.cells[2])
-  $('#' + newCell3).text(apiResponse.game.cells[3])
-  $('#' + newCell4).text(apiResponse.game.cells[4])
-  $('#' + newCell5).text(apiResponse.game.cells[5])
-  $('#' + newCell6).text(apiResponse.game.cells[6])
-  $('#' + newCell7).text(apiResponse.game.cells[7])
-  $('#' + newCell8).text(apiResponse.game.cells[8])
+  $('.view-prior-page').hide()
+  $('#first-turn-tracker').hide()
+  //
+  let xCounter = 0
+  let oCounter = 0
+  let playerTurn = ''
+  apiResponse.game.cells.forEach(function (element) {
+    if (element === 'x' || element === 'X') {
+      xCounter++
+    }
+    if (element === 'o' || element === 'O') {
+      oCounter++
+    }
+  })
+  if (xCounter > oCounter) {
+    playerTurn = 'player O'
+  } else {
+    playerTurn = store.user.email
+  }
+  //
+  $('#rotating-turn-tracker').text('Your turn, ' + playerTurn + '!')
+  $('.game-board').show()
+  $('#rotating-turn-tracker').show()
+  $('#game-id-tracker-span').text(apiResponse.game.id)
 }
 
 const onViewByIDFailure = function (apiResponse) {
